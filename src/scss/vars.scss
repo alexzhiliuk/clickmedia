@@ -1,0 +1,28 @@
+// Container
+$conteinerWidth: 1880 + px;
+$containerPadding: 20 + px;
+
+// Breakpoints
+$breakpoint1600: 1599.98 + px;
+$breakpoint1400: 1399.98 + px;
+$breakpoint1366: 1365.98 + px;
+$breakpoint1230: 1229.98 + px;
+$breakpoint1200: 1199.98 + px;
+$breakpoint1024: 1023.98 + px;
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint576: 575.98 + px;
+$breakpoint480: 479.98 + px;
+
+// Colors
+$orangePrimary: #FF6C22;
+$secondaryBlue: #1771F1;
+$black: #383838;
+$white: #FFF;
+$gray500: #6B7E99;
+$gray400: #9FAEC2;
+$gray300: #EDF5FF;
+
+
+// Burger
+$burgerBreakpoint: $breakpoint1200;

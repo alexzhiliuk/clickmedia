@@ -1,0 +1,293 @@
+.header {
+
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+
+    // .header__wrapper
+    &__wrapper {
+        background: rgba($color: $gray300, $alpha: .8);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 30px;
+
+        backdrop-filter: blur(40px);
+
+        // .header__wrapper_active
+        &_active {
+            border-radius: 0;
+            flex-direction: column;
+            height: 100dvh;
+
+            .header__logo {
+                align-self: flex-start;
+                flex: 0 1 100px;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            border-radius: 16px;
+        }
+
+    }
+
+    // .header__logo
+    &__logo {
+        flex: 0 1 435px;
+
+        @media screen and (max-width: $breakpoint1600) {
+            flex: 0 1 300px;
+        }
+
+        @media screen and (max-width: $breakpoint1366) {
+            flex: 0 1 250px;
+        }
+
+        img {
+            max-width: 271px;
+            width: 100%;
+            display: block;
+
+            @media screen and (max-width: $breakpoint1366) {
+                max-width: 200px;
+            }
+
+            @media screen and (max-width: $breakpoint768) {
+                max-width: 160px;
+            }
+
+            @media screen and (max-width: $breakpoint480) {
+                max-width: 140px;
+            }
+        }
+    }
+
+    // .header__menu
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-grow: 1;
+        
+        @media screen and (max-width: $breakpoint1600) {
+            gap: 30px;
+        }
+
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: none;
+            flex-direction: column;
+        }
+    }
+
+    // .header__menu-item
+    &__menu-item {
+
+    }
+
+    // .header__menu-link
+    &__menu-link {
+        padding: 14px 0;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+
+        color: $black;
+
+        @media screen and (max-width: $breakpoint1600) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $breakpoint1366) {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: $burgerBreakpoint) {
+            font-size: 20px;
+        }
+
+    }
+
+    // .header__contact
+    &__contact {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        flex-shrink: 0;
+
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: none;
+            flex-direction: column;
+        }
+    }
+
+    // .header__contact-item
+    &__contact-item {
+        display: flex;
+        align-items: center;
+    }
+
+    // .header__check
+    &__check {
+        gap: 10px;
+    }
+
+    // .header__check-icon
+    &__check-icon {
+        svg {
+            display: block;
+        }
+
+
+        @media screen and (max-width: $breakpoint1366) and (min-width: $burgerBreakpoint) {
+            svg {
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
+
+    // .header__check-text
+    &__check-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+
+        color: $black;
+
+        @media screen and (max-width: $breakpoint1600) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $breakpoint1366) {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: $burgerBreakpoint) {
+            font-size: 20px;
+        }
+    }
+
+    // .header__phone
+    &__phone {
+        gap: 30px;
+
+        @media screen and (max-width: $breakpoint1600) {
+            gap: 10px;
+        }
+    }
+
+    // .header__phone-icons
+    &__phone-icons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @media screen and (max-width: $breakpoint1600) and (min-width: $burgerBreakpoint) {
+            gap: 4px;
+        }
+    }
+
+    // .header__phone-icon
+    &__phone-icon {
+        @media screen and (max-width: $breakpoint1366) and (min-width: $burgerBreakpoint) {
+            svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+
+    // .header__phone-link
+    &__phone-link {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+
+        color: $black;
+
+        @media screen and (max-width: $breakpoint1600) {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: $breakpoint1366) {
+            font-size: 16px;
+        }
+
+    }
+
+    // .header__burger
+    &__burger {
+        display: none;
+        position: relative;
+        z-index: 10;
+        height: 20px;
+        width: 30px;
+
+        // .header__burger_active
+        &.header__burger_active {
+            span {
+                opacity: 0;
+            }
+
+            &::before {
+                rotate: 45deg;
+                top: 50%;
+                translate: 0 -50%;
+            }
+
+            &::after {
+                rotate: -45deg;
+                bottom: 50%;
+                translate: 0 50%;
+            }
+        }
+
+        &::before,
+        &::after,
+        span {
+            width: 100%;
+            height: 2px;
+            background-color: $orangePrimary;
+            border-radius: 1px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        span {
+
+        }
+
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: flex;
+            align-items: center;
+        }
+        
+    }
+}
+
+
+
