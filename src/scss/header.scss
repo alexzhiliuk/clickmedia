@@ -19,7 +19,7 @@
         backdrop-filter: blur(40px);
 
         // .header__wrapper_active
-        &_active {
+        &.header__wrapper_active {
             border-radius: 0;
             flex-direction: column;
             height: 100dvh;
