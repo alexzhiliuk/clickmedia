@@ -422,6 +422,64 @@ button {
   overflow-x: hidden;
 }
 
+.mark-orange {
+  color: #FF6C22;
+}
+
+.h1 {
+  font-family: HalvarBreit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  color: #383838;
+}
+@media screen and (max-width: 1399.98px) {
+  .h1 {
+    font-size: 64px;
+  }
+}
+@media screen and (max-width: 1199.98px) {
+  .h1 {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .h1 {
+    font-size: 28px;
+  }
+}
+
+.desktop-list, .hero__item-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #6B7E99;
+}
+@media screen and (max-width: 1399.98px) {
+  .desktop-list, .hero__item-text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .desktop-list, .hero__item-text {
+    font-size: 16px;
+  }
+}
+
+.section {
+  padding-bottom: 120px;
+}
+
 .header {
   position: fixed;
   top: 20px;
@@ -664,5 +722,83 @@ button {
   .header__burger {
     display: flex;
     align-items: center;
+  }
+}
+
+.header-backing {
+  height: 120px;
+}
+@media screen and (max-width: 1365.98px) {
+  .header-backing {
+    height: 90px;
+  }
+}
+
+.hero {
+  padding-top: 80px;
+}
+@media screen and (max-width: 991.98px) {
+  .hero {
+    padding-top: 40px;
+  }
+}
+.hero__subtitle {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 135%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  color: #383838;
+  margin-top: 20px;
+}
+@media screen and (max-width: 1399.98px) {
+  .hero__subtitle {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .hero__subtitle {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .hero__subtitle {
+    font-size: 18px;
+  }
+}
+.hero__items {
+  display: flex;
+  gap: 100px;
+  margin-top: 60px;
+}
+@media screen and (max-width: 1199.98px) {
+  .hero__items {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .hero__items {
+    margin-top: 40px;
+    gap: 20px;
+  }
+}
+.hero__item {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 767.98px) {
+  .hero__item {
+    gap: 16px;
+  }
+}
+.hero__item-marker img {
+  display: block;
+}
+@media screen and (max-width: 767.98px) {
+  .hero__item-marker img {
+    width: 16px;
   }
 }

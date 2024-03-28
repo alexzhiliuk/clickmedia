@@ -289,5 +289,11 @@
     }
 }
 
+.header-backing {
+    height: 120px;
 
+    @media screen and (max-width: $breakpoint1366) {
+        height: 90px;
+    }
+}
 

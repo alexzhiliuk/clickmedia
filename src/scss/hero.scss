@@ -1,0 +1,88 @@
+.hero {
+    padding-top: 80px;
+
+    @media screen and (max-width: $breakpoint992) {
+        padding-top: 40px;
+    }
+
+    // .hero__wrapper
+    &__wrapper {
+    }
+
+    // .hero__title
+    &__title {
+    }
+
+    // .hero__subtitle
+    &__subtitle {
+
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 135%;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+
+        color: $black;
+
+        margin-top: 20px;
+
+        @media screen and (max-width: $breakpoint1400) {
+            font-size: 24px;
+        }
+    
+        @media screen and (max-width: $breakpoint992) {
+            font-size: 20px;
+        }
+    
+        @media screen and (max-width: $breakpoint576) {
+            font-size: 18px;
+        }
+
+    }
+
+    // .hero__items
+    &__items {
+        display: flex;
+        gap: 100px;
+        margin-top: 60px;
+
+        @media screen and (max-width: $breakpoint1200) {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-top: 40px;
+            gap: 20px;
+        }
+    }
+
+    // .hero__item
+    &__item {
+        display: flex;
+        gap: 20px;
+
+        @media screen and (max-width: $breakpoint768) {
+            gap: 16px;
+        }
+    }
+
+    // .hero__item-marker
+    &__item-marker {
+        img {
+            display: block;
+
+            @media screen and (max-width: $breakpoint768) {
+                width: 16px;
+            }
+        }
+    }
+
+    // .hero__item-text
+    &__item-text {
+        @extend .desktop-list;
+    }
+}
+
