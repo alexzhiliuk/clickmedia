@@ -379,12 +379,12 @@ template {
   margin: 0 auto;
   padding: 0 20px;
 }
-.container__wrapper, .advantage__cta, .advantage__item > *, .chart-block, .services-list > *, .section__body-title {
+.container__wrapper, .advantage__cta, .advantage__item > *, .chart-block, .services-card, .services-list > *, .section__body-title {
   padding-left: 40px;
   padding-right: 40px;
 }
 @media screen and (max-width: 767.98px) {
-  .container__wrapper, .advantage__cta, .advantage__item > *, .chart-block, .services-list > *, .section__body-title {
+  .container__wrapper, .advantage__cta, .advantage__item > *, .chart-block, .services-card, .services-list > *, .section__body-title {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -394,7 +394,7 @@ template {
     max-width: calc(1880px + 20px);
     padding: 0 calc(20px / 2);
   }
-  .container__wrapper, .advantage__cta, .advantage__item > *, .chart-block, .services-list > *, .section__body-title {
+  .container__wrapper, .advantage__cta, .advantage__item > *, .chart-block, .services-card, .services-list > *, .section__body-title {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -546,7 +546,7 @@ input:not([type=submit])::placeholder {
   }
 }
 
-.h4, .advantage__cta-title, .advantage__item-title, .section__body-title {
+.h4, .advantage__cta-title, .advantage__item-title, .services-card__title, .section__body-title {
   font-family: HalvarBreit;
   font-style: normal;
   font-weight: 700;
@@ -556,12 +556,12 @@ input:not([type=submit])::placeholder {
   color: #383838;
 }
 @media screen and (max-width: 1199.98px) {
-  .h4, .advantage__cta-title, .advantage__item-title, .section__body-title {
+  .h4, .advantage__cta-title, .advantage__item-title, .services-card__title, .section__body-title {
     font-size: 28px;
   }
 }
 @media screen and (max-width: 991.98px) {
-  .h4, .advantage__cta-title, .advantage__item-title, .section__body-title {
+  .h4, .advantage__cta-title, .advantage__item-title, .services-card__title, .section__body-title {
     font-size: 24px;
   }
 }
@@ -598,7 +598,7 @@ input:not([type=submit])::placeholder {
   }
 }
 
-.desktop-list, .services-list__footer-item, .hero__item-text {
+.desktop-list, .services-card__list-item, .services-list__footer-item, .hero__item-text {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
@@ -608,12 +608,12 @@ input:not([type=submit])::placeholder {
   color: #6B7E99;
 }
 @media screen and (max-width: 1399.98px) {
-  .desktop-list, .services-list__footer-item, .hero__item-text {
+  .desktop-list, .services-card__list-item, .services-list__footer-item, .hero__item-text {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 767.98px) {
-  .desktop-list, .services-list__footer-item, .hero__item-text {
+  .desktop-list, .services-card__list-item, .services-list__footer-item, .hero__item-text {
     font-size: 16px;
   }
 }
@@ -1132,6 +1132,79 @@ input:not([type=submit])::placeholder {
 }
 .services-list__footer-item img {
   display: block;
+}
+
+.services-cards {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 991.98px) {
+  .services-cards {
+    flex-direction: column;
+  }
+}
+
+.services-card {
+  flex: 0 0 calc(50% - 10px);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-radius: 30px;
+}
+.services-card:first-of-type {
+  background: #1771F1 url(../img/services/card-1-bg.png) -20% 50%/172% auto no-repeat;
+}
+.services-card:last-of-type {
+  background: #1771F1 url(../img/services/card-2-bg.png) -50% 30%/auto 220% no-repeat;
+}
+@media screen and (max-width: 1199.98px) {
+  .services-card {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .services-card {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .services-card {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+.services-card__title {
+  color: #FFF;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 991.98px) {
+  .services-card__title {
+    margin-bottom: 20px;
+  }
+}
+.services-card__list {
+  padding-top: 40px;
+  border-top: 1px solid #FFF;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (max-width: 991.98px) {
+  .services-card__list {
+    padding-top: 20px;
+  }
+}
+.services-card__list-item {
+  color: #FFF;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+@media screen and (max-width: 767.98px) {
+  .services-card__list-item {
+    gap: 10px;
+  }
 }
 
 .chart-block {

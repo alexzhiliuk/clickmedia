@@ -112,3 +112,80 @@
         }
     }
 }
+
+.services-cards {
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: $breakpoint992) {
+        flex-direction: column;
+    }
+}
+
+.services-card {
+    @extend .container__wrapper;
+    flex: 0 0 calc(50% - 10px);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-radius: 30px;
+
+    &:first-of-type {
+        background: $secondaryBlue url(../img/services/card-1-bg.png) -20% 50% / 172% auto no-repeat;
+    }
+
+    &:last-of-type {
+        background: $secondaryBlue url(../img/services/card-2-bg.png) -50% 30% / auto 220% no-repeat;
+    }
+
+    @media screen and (max-width: $breakpoint1200) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @media screen and (max-width: $breakpoint992) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    // .services-card__title
+    &__title {
+        @extend .h4;
+        color: $white;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: $breakpoint992) {
+            margin-bottom: 20px;
+        }
+    }
+
+    // .services-card__list
+    &__list {
+        padding-top: 40px;
+        border-top: 1px solid $white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media screen and (max-width: $breakpoint992) {
+            padding-top: 20px;
+        }
+    }
+
+    // .services-card__list-item
+    &__list-item {
+        @extend .desktop-list;
+        color: $white;
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+
+        @media screen and (max-width: $breakpoint768) {
+            gap: 10px;
+        }
+    }
+}
