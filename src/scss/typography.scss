@@ -116,6 +116,25 @@
         font-size: 16px;
     }
 
+}
 
+.button-l {
+    font-family: HalvarBreit;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 145%;
+    text-align: center;
+    color: $white;
 
+    @media screen and (max-width: $breakpoint1200) {
+        font-size: 24px;
+    }
+
+    @media screen and (max-width: $breakpoint992) {
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        font-size: 18px;
+    }
 }

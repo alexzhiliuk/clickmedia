@@ -1,0 +1,67 @@
+.chart-block {
+
+    @extend .container__wrapper;
+    padding-top: 60px;
+    padding-bottom: 80px;
+
+    @media screen and (max-width: $breakpoint992) {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    // .chart-block__title
+    &__title {
+        font-family: "Montserrat";
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 155%;
+        letter-spacing: -0.02em;
+        color: $black;
+
+        @media screen and (max-width: $breakpoint1200) {
+            font-size: 24px;
+        }
+    
+        @media screen and (max-width: $breakpoint992) {
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 16px;
+        }
+    }
+
+    // .chart-block__chart
+    &__chart {
+        width: 100%;
+        aspect-ratio: 1800 / 500;
+        margin-top: 40px;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint576) {
+            aspect-ratio: unset;
+            height: 200px;
+            overflow: scroll;
+
+        }
+
+        img {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+
+
+            @media screen and (max-width: $breakpoint576) {
+                width: unset;
+                height: 100%;
+
+            }
+        }
+    }
+}

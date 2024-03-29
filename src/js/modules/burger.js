@@ -21,3 +21,14 @@ $(".header__burger").click(function() {
     $("body").toggleClass("lock")
 })
 
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+       $(".header").addClass("header_scrolled")
+   } else {
+      $(".header").removeClass("header_scrolled")
+   }
+   lastScrollTop = st;
+});
+
