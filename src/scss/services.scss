@@ -1,0 +1,114 @@
+.services {
+
+    // .services__title
+    &__title {
+        margin-bottom: 40px;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.services-list {
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @media screen and (max-width: $breakpoint992) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    & > * {
+        @extend .container__wrapper;
+    }
+
+    // .services-list__items
+    &__items {
+        padding-bottom: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        @media screen and (max-width: $breakpoint992) {
+            gap: 10px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            padding-bottom: 20px;
+        }
+    }
+
+    // .services-list__item
+    &__item {
+        padding: 20px 30px;
+        border-radius: 100px;
+        background-color: rgba($color: #C8D5E8, $alpha: .2);
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: $black;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+
+        @media screen and (max-width: $breakpoint1400) {
+            font-size: 18px;
+            padding: 16px 24px;
+
+            img {
+                width: 34px;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 16px;
+            padding: 12px 18px;
+
+            img {
+                width: 28px;
+            }
+        }
+
+    }
+
+    // .services-list__footer
+    &__footer {
+        padding-top: 40px;
+        border-top: 1px solid $borderColor;
+
+        @media screen and (max-width: $breakpoint768) {
+            padding-top: 20px;
+        }
+        
+    }
+
+    // .services-list__footer-item
+    &__footer-item {
+        @extend .desktop-list;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+
+        &:not(:last-of-type) {
+            margin-bottom: 10px;
+        }
+
+        img {
+            display: block;
+        }
+    }
+}

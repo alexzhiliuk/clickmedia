@@ -96,6 +96,10 @@
         @media screen and (max-width: $burgerBreakpoint) {
             display: none;
             flex-direction: column;
+
+            &_active {
+                display: flex;
+            }
         }
     }
 
@@ -141,6 +145,10 @@
         @media screen and (max-width: $burgerBreakpoint) {
             display: none;
             flex-direction: column;
+
+            &_active {
+                display: flex;
+            }
         }
     }
 

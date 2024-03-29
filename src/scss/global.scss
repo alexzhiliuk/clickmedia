@@ -26,6 +26,16 @@
             padding-right: 20px;
         }
     }
+
+    @media screen and (max-width: $breakpoint576) {
+        max-width: calc($conteinerWidth + $containerPadding);
+        padding: 0 calc($containerPadding / 2);
+
+        &__wrapper {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
 }
 
 html,
