@@ -715,6 +715,7 @@ input:not([type=submit])::placeholder {
   padding-bottom: 20px;
   border-radius: 30px;
   backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
 }
 .header__wrapper.header__wrapper_active {
   border-radius: 0;
