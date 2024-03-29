@@ -7,13 +7,13 @@ $(".header__burger").click(function() {
         contact = $(".header__contact")
     
     if ($(this).hasClass("header__burger_active")) {
-        $(this).css("position", "absolute").css("right", `${right}px`).css("top", `${top}px`)
+        // $(this).css("position", "absolute").css("right", `${right}px`).css("top", `${top}px`)
         wrapper.parent().css("padding", "0").css("top", "0")
         wrapper.addClass("header__wrapper_active")
         menu.css("display", "flex")
         contact.css("display", "flex")
     } else {
-        $(this).css("position", "").css("right", ``).css("top", ``)
+        // $(this).css("position", "").css("right", ``).css("top", ``)
         wrapper.parent().css("padding", "").css("top", "")
         wrapper.removeClass("header__wrapper_active")
         menu.hide()

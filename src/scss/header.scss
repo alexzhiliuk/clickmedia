@@ -21,12 +21,27 @@
         // .header__wrapper_active
         &.header__wrapper_active {
             border-radius: 0;
-            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: unset;
             height: 100dvh;
 
             .header__logo {
                 align-self: flex-start;
-                flex: 0 1 100px;
+                order: 1;
+            }
+
+            .header__menu {
+                order: 3;
+                flex: 0 0 100%;
+            }
+
+            .header__contact {
+                order: 4;
+                flex: 0 0 100%;
+            }
+
+            .header__burger {
+                order: 2;
             }
         }
 
