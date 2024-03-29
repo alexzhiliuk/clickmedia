@@ -95,6 +95,20 @@
 
 }
 
+.text-3 {
+
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 165%;
+    color: $gray500;
+
+    @media screen and (max-width: $breakpoint992) {
+        font-size: 18px;
+    }
+
+}
+
 .desktop-list {
 
     font-family: 'Montserrat';
