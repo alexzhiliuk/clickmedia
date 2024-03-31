@@ -109,7 +109,7 @@ input:not([type="submit"]) {
     line-height: 175%;
     color: $black;
     padding: 20px 30px;
-    border: 1px solid $gray300;
+    border: 2px solid $gray300;
     border-radius: 15px;
 
     &::placeholder {

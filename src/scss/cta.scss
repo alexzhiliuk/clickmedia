@@ -1,0 +1,140 @@
+.cta {
+
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    @media screen and (max-width: $breakpoint1200) {
+        flex-direction: column;
+    }
+
+    & > * {
+        @extend .container__wrapper;
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        @media screen and (max-width: $breakpoint992) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+
+    // .cta__form-block
+    &__form-block {
+        @extend .section__white-block;
+        background: $white url(../img/cta-section/form-bg.png) 30% 45% / 220% auto no-repeat;
+        flex: 0 0 56%;
+    }
+
+    // .cta__title
+    &__title {
+        font-family: HalvarBreit;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 105%;
+        letter-spacing: -0.01em;
+        color: $black;
+
+        @media screen and (max-width: $breakpoint1400) {
+            font-size: 42px;
+        }
+    
+        @media screen and (max-width: $breakpoint1200) {
+            font-size: 32px;
+        }
+    
+        @media screen and (max-width: $breakpoint992) {
+            font-size: 28px;
+        }
+    }
+
+    // .cta__form
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 80px;
+
+        @media screen and (max-width: $breakpoint1200) {
+            margin-top: 60px;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            margin-top: 40px;
+        }
+    }
+
+    // .cta__form-input
+    &__form-input {
+    }
+
+    // .cta__form-btn
+    &__form-btn {
+        max-width: 100%;
+    }
+
+    // .cta__phone-block
+    &__phone-block {
+        @extend .section__white-block;
+        background: $secondaryBlue url(../img/cta-section/phone-bg.png) 40% 70% / 240% auto no-repeat;
+        
+        @media screen and (max-width: $breakpoint1200) {
+            width: 100%;
+        }
+    }
+
+    // .cta__avatar
+    &__avatar {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+
+        position: relative;
+
+        &::before {
+            content: url(../img/cta-section/avatar-icon.svg);
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    // .cta__avatar-caption
+    &__avatar-caption {
+        @extend .h4;
+        color: $white;
+        margin-top: 30px;
+    }
+
+    // .cta__phone-btn
+    &__phone-btn {
+        background-color: $white;
+        color: $black;
+        max-width: 100%;
+        margin-top: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @media screen and (max-width: $breakpoint1200) {
+            margin-top: 80px;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            margin-top: 40px;
+        }
+    }
+}
+
