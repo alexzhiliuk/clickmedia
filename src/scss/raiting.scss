@@ -224,3 +224,88 @@
         }
     }
 }
+.raiting-banner {
+
+    @extend .container__wrapper;
+    @extend .section__white-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    background: $white url(../img/raiting/banner-bg.png) right 50% / 102.4% auto no-repeat;
+
+    @media screen and (max-width: $breakpoint992) {
+        margin-top: 40px;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        flex-direction: column;
+        align-items: flex-start;
+        background: $white url(../img/raiting/banner-bg.png) 50% 50% / 172% auto no-repeat;
+    }
+
+    @media screen and (max-width: $breakpoint480) {
+        background: $white url(../img/raiting/banner-bg.png) 50% 50% / 270% auto no-repeat;
+    }
+
+    // .raiting-banner__img
+    &__img {
+        width: 170px;
+        height: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        @media screen and (max-width: $breakpoint1200) {
+            height: 140px;
+            width: 140px;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            height: unset;
+            width: unset;
+            overflow: unset;
+        }
+
+        img {
+            height: 130px;
+
+            @media screen and (max-width: $breakpoint1200) {
+                height: 100px;
+            }
+
+            @media screen and (max-width: $breakpoint992) {
+                height: 85px;
+            }
+        }
+    }
+
+    // .raiting-banner__content
+    &__content {
+        margin-left: 20px;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-left: 0;
+            margin-top: 20px;
+        }
+    }
+
+    // .raiting-banner__title
+    &__title {
+        @extend .h4;
+
+        img {
+            display: inline-block;
+        }
+    }
+
+    // .raiting-banner__text
+    &__text {
+        @extend .text-2;
+        margin-top: 5px;
+        color: $gray500;
+    }
+}
+

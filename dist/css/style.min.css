@@ -380,12 +380,12 @@ template {
   padding-left: 20px;
   padding-right: 20px;
 }
-.container__wrapper, .raiting-slide, .advantage__cta, .advantage__item > *, .chart-block, .services-card, .services-list > *, .section__body-title {
+.container__wrapper, .raiting-banner, .raiting-slide, .advantage__cta, .advantage__item > *, .chart-block, .services-card, .services-list > *, .section__body-title {
   padding-left: 40px;
   padding-right: 40px;
 }
 @media screen and (max-width: 767.98px) {
-  .container__wrapper, .raiting-slide, .advantage__cta, .advantage__item > *, .chart-block, .services-card, .services-list > *, .section__body-title {
+  .container__wrapper, .raiting-banner, .raiting-slide, .advantage__cta, .advantage__item > *, .chart-block, .services-card, .services-list > *, .section__body-title {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -396,7 +396,7 @@ template {
     padding-left: calc(20px / 2);
     padding-right: calc(20px / 2);
   }
-  .container__wrapper, .raiting-slide, .advantage__cta, .advantage__item > *, .chart-block, .services-card, .services-list > *, .section__body-title {
+  .container__wrapper, .raiting-banner, .raiting-slide, .advantage__cta, .advantage__item > *, .chart-block, .services-card, .services-list > *, .section__body-title {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -548,7 +548,7 @@ input:not([type=submit])::placeholder {
   }
 }
 
-.h4, .raiting-slide__title, .advantage__cta-title, .advantage__item-title, .services-card__title, .section__body-title {
+.h4, .raiting-banner__title, .raiting-slide__title, .advantage__cta-title, .advantage__item-title, .services-card__title, .section__body-title {
   font-family: HalvarBreit;
   font-style: normal;
   font-weight: 700;
@@ -558,17 +558,17 @@ input:not([type=submit])::placeholder {
   color: #383838;
 }
 @media screen and (max-width: 1199.98px) {
-  .h4, .raiting-slide__title, .advantage__cta-title, .advantage__item-title, .services-card__title, .section__body-title {
+  .h4, .raiting-banner__title, .raiting-slide__title, .advantage__cta-title, .advantage__item-title, .services-card__title, .section__body-title {
     font-size: 28px;
   }
 }
 @media screen and (max-width: 991.98px) {
-  .h4, .raiting-slide__title, .advantage__cta-title, .advantage__item-title, .services-card__title, .section__body-title {
+  .h4, .raiting-banner__title, .raiting-slide__title, .advantage__cta-title, .advantage__item-title, .services-card__title, .section__body-title {
     font-size: 24px;
   }
 }
 
-.text-2, .advantage__cta-subtitle, .advantage__property-body, .section__header-text {
+.text-2, .raiting-banner__text, .advantage__cta-subtitle, .advantage__property-body, .section__header-text {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
@@ -577,12 +577,12 @@ input:not([type=submit])::placeholder {
   color: #383838;
 }
 @media screen and (max-width: 1199.98px) {
-  .text-2, .advantage__cta-subtitle, .advantage__property-body, .section__header-text {
+  .text-2, .raiting-banner__text, .advantage__cta-subtitle, .advantage__property-body, .section__header-text {
     font-size: 22px;
   }
 }
 @media screen and (max-width: 991.98px) {
-  .text-2, .advantage__cta-subtitle, .advantage__property-body, .section__header-text {
+  .text-2, .raiting-banner__text, .advantage__cta-subtitle, .advantage__property-body, .section__header-text {
     font-size: 18px;
   }
 }
@@ -686,12 +686,12 @@ input:not([type=submit])::placeholder {
   display: flex;
   justify-content: center;
 }
-.section__white-block, .raiting-slide {
+.section__white-block, .raiting-banner, .raiting-slide {
   border-radius: 30px;
   background-color: #FFF;
 }
 @media screen and (max-width: 767.98px) {
-  .section__white-block, .raiting-slide {
+  .section__white-block, .raiting-banner, .raiting-slide {
     border-radius: 18px;
   }
 }
@@ -1682,6 +1682,82 @@ input:not([type=submit])::placeholder {
   .raiting-slide__list-item span {
     margin-right: 10px;
   }
+}
+
+.raiting-banner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  background: #FFF url(../img/raiting/banner-bg.png) right 50%/102.4% auto no-repeat;
+}
+@media screen and (max-width: 991.98px) {
+  .raiting-banner {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .raiting-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    background: #FFF url(../img/raiting/banner-bg.png) 50% 50%/172% auto no-repeat;
+  }
+}
+@media screen and (max-width: 479.98px) {
+  .raiting-banner {
+    background: #FFF url(../img/raiting/banner-bg.png) 50% 50%/270% auto no-repeat;
+  }
+}
+.raiting-banner__img {
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media screen and (max-width: 1199.98px) {
+  .raiting-banner__img {
+    height: 140px;
+    width: 140px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .raiting-banner__img {
+    height: unset;
+    width: unset;
+    overflow: unset;
+  }
+}
+.raiting-banner__img img {
+  height: 130px;
+}
+@media screen and (max-width: 1199.98px) {
+  .raiting-banner__img img {
+    height: 100px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .raiting-banner__img img {
+    height: 85px;
+  }
+}
+.raiting-banner__content {
+  margin-left: 20px;
+}
+@media screen and (max-width: 767.98px) {
+  .raiting-banner__content {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+.raiting-banner__title img {
+  display: inline-block;
+}
+.raiting-banner__text {
+  margin-top: 5px;
+  color: #6B7E99;
 }
 
 @font-face {
