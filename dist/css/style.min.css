@@ -2369,6 +2369,8 @@ input:not([type=submit])::placeholder {
 }
 .cta__phone-block {
   background: #1771F1 url(../img/cta-section/phone-bg.png) 40% 70%/240% auto no-repeat;
+  position: sticky;
+  top: 20px;
 }
 @media screen and (max-width: 1199.98px) {
   .cta__phone-block {
