@@ -4,6 +4,7 @@
     top: 0; height: 100%;
     overflow: hidden;
     z-index: -1;
+    pointer-events: none;
 
     &__noise {
         position: absolute;
@@ -23,5 +24,26 @@
         backdrop-filter: blur(50px);
         background: rgba(237, 245, 255, 0.3);
         opacity: 0.3;
+    }
+}
+
+.header-background {
+    position: absolute;
+    left: 0; width: 100%;
+    top: 0; height: 100%;
+    overflow: hidden;
+    z-index: -2;
+    pointer-events: none;
+
+    &__gradient {
+        position: absolute;
+        right: -8vw;
+        top: -26vw;
+        width: 62vw;
+        z-index: 1;
+
+        @media screen and (max-width: $breakpoint768) {
+            width: 80vw;
+        }
     }
 }

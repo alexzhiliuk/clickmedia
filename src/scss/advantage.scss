@@ -269,3 +269,24 @@
     }
 }
 
+.advantage-section {
+    position: relative;
+
+    &__gradient {
+        position: absolute;
+        z-index: -1;
+        top: -6vw;
+        left: 6vw;
+        width: 90vw;
+
+        @media screen and (max-width: $breakpoint768) {
+            top: 0vw;
+            width: 100vw;
+            left: 0;
+        }
+
+        @media screen and (max-width: $breakpoint576) {
+            top: 30vw;
+        }
+    }
+}

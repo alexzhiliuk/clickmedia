@@ -65,3 +65,21 @@
         }
     }
 }
+
+
+.chart-section {
+    position: relative;
+
+    &__gradient {
+        position: absolute;
+        z-index: -1;
+        top: -20vw;
+        left: 0;
+        width: 70vw;
+
+        @media screen and (max-width: $breakpoint768) {
+            top: -20vw;
+            width: 90vw;
+        }
+    }
+}

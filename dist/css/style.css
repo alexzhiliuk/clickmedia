@@ -407,6 +407,7 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -785,6 +786,7 @@ input:not([type=submit])::placeholder {
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  pointer-events: none;
 }
 .body-background__noise {
   position: absolute;
@@ -807,6 +809,29 @@ input:not([type=submit])::placeholder {
   backdrop-filter: blur(50px);
   background: rgba(237, 245, 255, 0.3);
   opacity: 0.3;
+}
+
+.header-background {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+  pointer-events: none;
+}
+.header-background__gradient {
+  position: absolute;
+  right: -8vw;
+  top: -26vw;
+  width: 62vw;
+  z-index: 1;
+}
+@media screen and (max-width: 767.98px) {
+  .header-background__gradient {
+    width: 80vw;
+  }
 }
 
 .header {
@@ -1475,6 +1500,10 @@ input:not([type=submit])::placeholder {
     width: 16px;
   }
 }
+.services {
+  position: relative;
+  overflow: hidden;
+}
 .services__title {
   margin-bottom: 40px;
 }
@@ -1643,6 +1672,23 @@ input:not([type=submit])::placeholder {
   }
 }
 
+.commission-section {
+  position: relative;
+}
+.commission-section__gradient {
+  position: absolute;
+  z-index: -1;
+  top: -6vw;
+  right: -10vw;
+  width: 71vw;
+}
+@media screen and (max-width: 767.98px) {
+  .commission-section__gradient {
+    top: 0;
+    width: 90vw;
+  }
+}
+
 .chart-block {
   padding-top: 60px;
   padding-bottom: 80px;
@@ -1705,6 +1751,23 @@ input:not([type=submit])::placeholder {
   .chart-block__chart img {
     width: unset;
     height: 100%;
+  }
+}
+
+.chart-section {
+  position: relative;
+}
+.chart-section__gradient {
+  position: absolute;
+  z-index: -1;
+  top: -20vw;
+  left: 0;
+  width: 70vw;
+}
+@media screen and (max-width: 767.98px) {
+  .chart-section__gradient {
+    top: -20vw;
+    width: 90vw;
   }
 }
 
@@ -1919,6 +1982,29 @@ input:not([type=submit])::placeholder {
 @media screen and (max-width: 1599.98px) {
   .advantage__cta-btn {
     max-width: 100%;
+  }
+}
+
+.advantage-section {
+  position: relative;
+}
+.advantage-section__gradient {
+  position: absolute;
+  z-index: -1;
+  top: -6vw;
+  left: 6vw;
+  width: 90vw;
+}
+@media screen and (max-width: 767.98px) {
+  .advantage-section__gradient {
+    top: 0vw;
+    width: 100vw;
+    left: 0;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .advantage-section__gradient {
+    top: 30vw;
   }
 }
 
