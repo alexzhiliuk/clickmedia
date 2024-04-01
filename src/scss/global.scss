@@ -100,6 +100,22 @@ button {
     @media screen and (max-width: $breakpoint576) {
         max-width: 100%;
     }
+
+    &_sm {
+        @extend .button-s;
+        padding: 10px 20px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: fit-content;
+        width: 100%;
+    }
+
+    &_white {
+        background-color: $white;
+        color: $black;
+    }
 }
 
 input:not([type="submit"]) {

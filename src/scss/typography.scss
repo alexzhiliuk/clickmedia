@@ -152,3 +152,19 @@
         font-size: 18px;
     }
 }
+
+.button-s {
+    font-family: HalvarBreit;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 165%;
+    color: $black;
+
+    @media screen and (max-width: $breakpoint992) {
+        font-size: 18px;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        font-size: 16px;
+    }
+}
