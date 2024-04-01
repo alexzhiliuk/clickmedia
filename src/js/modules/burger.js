@@ -18,7 +18,8 @@ $(".header__burger").click(function() {
     }
 
 
-    $("body").toggleClass("lock")
+    $("body, html").toggleClass("lock")
+
 })
 
 var lastScrollTop = 0;
