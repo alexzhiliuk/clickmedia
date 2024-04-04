@@ -17,6 +17,7 @@
 
     // .slider-section__btn
     &__btn {
+        transition: background $quickTransition;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -24,6 +25,13 @@
         padding: 16px;
         background-color: $white;
         cursor: pointer;
+
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: darken($color: $white, $amount: 5);
+            }
+        }
 
         @media screen and (max-width: $breakpoint1200) {
             svg {
@@ -46,6 +54,7 @@
 
         &.swiper-button-disabled {
             cursor: auto;
+            pointer-events: none;
             svg {
                 opacity: .2;
             }

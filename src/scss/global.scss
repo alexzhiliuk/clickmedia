@@ -80,10 +80,13 @@ button {
 
 .mark-orange {
     color: $orangePrimary;
+    font-family: inherit
 }
 
 .btn {
     @extend .button-l;
+
+    transition: background $quickTransition;
 
     border-radius: 100px;
     padding: 22px 60px;
@@ -93,6 +96,12 @@ button {
     justify-content: center;
     max-width: fit-content;
     width: 100%;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: lighten($color: $orangePrimary, $amount: 5);
+        }
+    }
 
     @media screen and (max-width: $breakpoint768) {
         padding: 14px 48px;
@@ -104,6 +113,7 @@ button {
 
     &_sm {
         @extend .button-s;
+        transition: background $quickTransition;
         padding: 10px 20px;
         border-radius: 15px;
         display: flex;
@@ -116,6 +126,12 @@ button {
     &_white {
         background-color: $white;
         color: $black;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: darken($color: $white, $amount: 5);
+            }
+        }
     }
 }
 

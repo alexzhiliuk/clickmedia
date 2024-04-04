@@ -31,5 +31,11 @@ $(window).scroll(function(event){
       $(".header").removeClass("header_scrolled")
    }
    lastScrollTop = st;
+
+   if (st == 0) {
+    $(".header__wrapper").removeClass("header__wrapper_bg")
+   } else {
+    $(".header__wrapper").addClass("header__wrapper_bg")
+   }
 });
 

@@ -442,9 +442,11 @@ button {
 
 .mark-orange {
   color: #FF6C22;
+  font-family: inherit;
 }
 
 .btn {
+  transition: background 120ms ease-out;
   border-radius: 100px;
   padding: 22px 60px;
   background-color: #FF6C22;
@@ -453,6 +455,11 @@ button {
   justify-content: center;
   max-width: fit-content;
   width: 100%;
+}
+@media (hover: hover) {
+  .btn:hover {
+    background-color: #ff7d3c;
+  }
 }
 @media screen and (max-width: 767.98px) {
   .btn {
@@ -465,6 +472,7 @@ button {
   }
 }
 .btn_sm {
+  transition: background 120ms ease-out;
   padding: 10px 20px;
   border-radius: 15px;
   display: flex;
@@ -476,6 +484,11 @@ button {
 .btn_white {
   background-color: #FFF;
   color: #383838;
+}
+@media (hover: hover) {
+  .btn_white:hover {
+    background-color: #f2f2f2;
+  }
 }
 
 input:not([type=submit]) {
@@ -740,6 +753,7 @@ input:not([type=submit])::placeholder {
   gap: 10px;
 }
 .slider-section__btn {
+  transition: background 120ms ease-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -747,6 +761,11 @@ input:not([type=submit])::placeholder {
   padding: 16px;
   background-color: #FFF;
   cursor: pointer;
+}
+@media (hover: hover) {
+  .slider-section__btn:hover {
+    background-color: #f2f2f2;
+  }
 }
 @media screen and (max-width: 1199.98px) {
   .slider-section__btn {
@@ -773,6 +792,7 @@ input:not([type=submit])::placeholder {
 }
 .slider-section__btn.swiper-button-disabled {
   cursor: auto;
+  pointer-events: none;
 }
 .slider-section__btn.swiper-button-disabled svg {
   opacity: 0.2;
@@ -846,7 +866,6 @@ input:not([type=submit])::placeholder {
   top: -10px;
 }
 .header__wrapper {
-  background: rgba(237, 245, 255, 0.8);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -854,6 +873,9 @@ input:not([type=submit])::placeholder {
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 30px;
+}
+.header__wrapper_bg, .header__wrapper.header__wrapper_active {
+  background: rgba(237, 245, 255, 0.8);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
 }
@@ -862,6 +884,17 @@ input:not([type=submit])::placeholder {
   flex-wrap: wrap;
   align-items: unset;
   height: 100dvh;
+  padding: 40px 60px;
+}
+@media screen and (max-width: 767.98px) {
+  .header__wrapper.header__wrapper_active {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .header__wrapper.header__wrapper_active {
+    padding: 40px 20px;
+  }
 }
 .header__wrapper.header__wrapper_active .header__logo {
   align-self: flex-start;
@@ -944,6 +977,12 @@ input:not([type=submit])::placeholder {
   line-height: 140%;
   letter-spacing: -0.01em;
   color: #383838;
+  transition: color 120ms ease-out;
+}
+@media (hover: hover) {
+  .header__menu-link:hover {
+    color: #5e5e5e;
+  }
 }
 @media screen and (max-width: 1599.98px) {
   .header__menu-link {
@@ -964,8 +1003,13 @@ input:not([type=submit])::placeholder {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 20px;
+  gap: 50px;
   flex-shrink: 0;
+}
+@media screen and (max-width: 1599.98px) {
+  .header__contact {
+    gap: 30px;
+  }
 }
 @media screen and (max-width: 1199.98px) {
   .header__contact {
@@ -1442,28 +1486,30 @@ input:not([type=submit])::placeholder {
 }
 .hero__subtitle {
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
+  font-weight: 500;
+  font-size: 26px;
   line-height: 135%;
-  display: flex;
-  align-items: center;
   letter-spacing: -0.01em;
-  color: #383838;
-  margin-top: 20px;
+  max-width: max-content;
+  color: #1771F1;
+  background-color: rgba(23, 113, 241, 0.1);
+  padding: 8px 12px;
+  border-radius: 28px;
+  margin-bottom: 10px;
 }
 @media screen and (max-width: 1399.98px) {
   .hero__subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (max-width: 991.98px) {
   .hero__subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 575.98px) {
   .hero__subtitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 .hero__items {
@@ -1739,6 +1785,22 @@ input:not([type=submit])::placeholder {
     aspect-ratio: unset;
     height: 200px;
     overflow: scroll;
+    overflow-y: hidden;
+  }
+  .chart-block__chart::-webkit-scrollbar {
+    background: #F1F3F9;
+    height: 8px;
+    padding: 0 2px;
+    border-radius: 8px;
+    border-left: 1px solid #E1E6EF;
+  }
+  .chart-block__chart::-webkit-scrollbar-thumb {
+    background-color: rgba(29, 36, 51, 0.6);
+    opacity: 0.6;
+    height: 4px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: content-box;
   }
 }
 .chart-block__chart img {
