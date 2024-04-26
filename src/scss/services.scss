@@ -14,8 +14,8 @@
 
 .services-list {
 
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     @media screen and (max-width: $breakpoint992) {
         padding-top: 40px;
@@ -132,11 +132,11 @@
     border-radius: 30px;
 
     &:first-of-type {
-        background: $secondaryBlue url(../img/services/card-1-bg.png) -20% 50% / 172% auto no-repeat;
+        background: $colorSecondary url(../img/services/card-1-bg.png) -20% 50% / 172% auto no-repeat;
     }
 
     &:last-of-type {
-        background: $secondaryBlue url(../img/services/card-2-bg.png) -50% 30% / auto 220% no-repeat;
+        background: $colorSecondary url(../img/services/card-2-bg.png) -50% 30% / auto 220% no-repeat;
     }
 
     @media screen and (max-width: $breakpoint1200) {

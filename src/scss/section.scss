@@ -1,5 +1,6 @@
 .section {
-    padding-bottom: 120px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     @media screen and (max-width: $breakpoint768) {
         padding-bottom: 80px;
@@ -25,14 +26,13 @@
     }
 
     &__title {
-        @extend .h2;
+
     }
 
     &__body {
 
         &-title {
-            @extend .h4;
-            @extend .container__wrapper;
+
         }
     }
 

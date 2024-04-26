@@ -1,6 +1,9 @@
+// Body
+$bodyYPadding: 20 + px;
+$bodyXPadding: 50 + px;
+
 // Container
-$conteinerWidth: 1880 + px;
-$containerPadding: 20 + px;
+$conteinerWidth: 2000 + px;
 
 // Breakpoints
 $breakpoint1600: 1599.98 + px;
@@ -15,18 +18,22 @@ $breakpoint576: 575.98 + px;
 $breakpoint480: 479.98 + px;
 
 // Colors
-$orangePrimary: #FF6C22;
-$secondaryBlue: #1771F1;
+$colorPrimary: #FF6C22;
+$colorSecondary: #1771F1;
 $black: #383838;
 $white: #FFF;
 $gray500: #6B7E99;
 $gray400: #9FAEC2;
 $gray300: #EDF5FF;
 $borderColor: #DAE3F0;
+$white50: rgb(255 255 255 / 50%);
 
+// Fonts
+$textFont: 'Montserrat';
+$headersFont: 'HalvarBreit';
 
 // Burger
-$burgerBreakpoint: $breakpoint1200;
+$burgerBreakpoint: $breakpoint1600;
 
 // Transitions
 $quickTransition: 120ms ease-out;

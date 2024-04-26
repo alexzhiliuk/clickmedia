@@ -33,9 +33,14 @@ $(window).scroll(function(event){
    lastScrollTop = st;
 
    if (st == 0) {
-    $(".header__wrapper").removeClass("header__wrapper_bg")
+    $(".header__nav").removeClass("header__nav_bg")
    } else {
-    $(".header__wrapper").addClass("header__wrapper_bg")
+    $(".header__nav").addClass("header__nav_bg")
    }
 });
 
+$('#services-show').click(function() {
+    $(this).toggleClass('active');
+    $('.services-menu').fadeToggle();
+    $('body, html').toggleClass("lock");
+});

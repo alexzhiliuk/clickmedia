@@ -1,10 +1,7 @@
 .raiting-slider {
-    padding-left: $containerPadding !important;
-    padding-right: $containerPadding !important;
 
     @media screen and (max-width: $breakpoint576) {
-        padding-left: calc($containerPadding / 2) !important;
-        padding-right: calc($containerPadding / 2) !important;
+
     }
 }
 .raiting-slide {
@@ -100,7 +97,7 @@
 
     // .raiting-slide__raiting
     &__raiting {
-        background-color: $orangePrimary;
+        background-color: $colorPrimary;
         border-radius: 15px;
         padding: 20px;
         text-align: center;

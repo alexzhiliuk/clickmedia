@@ -81,7 +81,7 @@
     // .cta__phone-block
     &__phone-block {
         @extend .section__white-block;
-        background: $secondaryBlue url(../img/cta-section/phone-bg.png) 40% 70% / 240% auto no-repeat;
+        background: $colorSecondary url(../img/cta-section/phone-bg.png) 40% 70% / 240% auto no-repeat;
         position: sticky;
         top: 20px;
         
