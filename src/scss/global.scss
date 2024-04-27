@@ -17,6 +17,11 @@ main {
     margin: 0 auto;
 }
 
+@mixin inner-x-padding {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 .container {
     max-width: 2000px;
     width: 100%;

@@ -1,103 +1,21 @@
-.services {
+.commission-section {
+
     position: relative;
-    overflow: hidden;
 
-    // .services__title
-    &__title {
-        margin-bottom: 40px;
-
-        @media screen and (max-width: $breakpoint768) {
-            margin-bottom: 20px;
-        }
-    }
-}
-
-.services-list {
-
-    padding-top: 50px;
-    padding-bottom: 50px;
-
-    @media screen and (max-width: $breakpoint992) {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    @media screen and (max-width: $breakpoint768) {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    & > * {
-        @extend .container__wrapper;
-    }
-
-    // .services-list__items
-    &__items {
-        padding-bottom: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-
-        @media screen and (max-width: $breakpoint992) {
-            gap: 10px;
-        }
+    &__gradient {
+        position: absolute;
+        z-index: -1;
+        top: -6vw;
+        right: -10vw;
+        width: 71vw;
 
         @media screen and (max-width: $breakpoint768) {
-            padding-bottom: 20px;
+            top: 0;
+            width: 90vw;
         }
     }
 
-    // .services-list__item
-    &__item {
-        padding: 20px 30px;
-        border-radius: 100px;
-        background-color: rgba($color: #C8D5E8, $alpha: .2);
-
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 100%;
-        letter-spacing: -0.01em;
-        color: $black;
-
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-
-        @media screen and (max-width: $breakpoint1400) {
-            font-size: 18px;
-            padding: 16px 24px;
-
-            img {
-                width: 34px;
-            }
-        }
-
-        @media screen and (max-width: $breakpoint768) {
-            font-size: 16px;
-            padding: 12px 18px;
-
-            img {
-                width: 28px;
-            }
-        }
-
-    }
-
-    // .services-list__footer
-    &__footer {
-        padding-top: 40px;
-        border-top: 1px solid $borderColor;
-
-        @media screen and (max-width: $breakpoint768) {
-            padding-top: 20px;
-        }
-        
-    }
-
-    // .services-list__footer-item
+    // .commission-section__footer-item
     &__footer-item {
         @extend .desktop-list;
 
@@ -115,6 +33,59 @@
     }
 }
 
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    @media screen and (max-width: $breakpoint992) {
+        gap: 10px;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        padding-bottom: 20px;
+    }
+}
+
+.tag {
+    padding: 20px 30px;
+    border-radius: 100px;
+    background-color: rgba($color: #C8D5E8, $alpha: .2);
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: $black;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+
+    @media screen and (max-width: $breakpoint1400) {
+        font-size: 18px;
+        padding: 16px 24px;
+
+        img {
+            width: 34px;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        font-size: 16px;
+        padding: 12px 18px;
+
+        img {
+            width: 28px;
+        }
+    }
+}
+
+
+
 .services-cards {
     display: flex;
     gap: 20px;
@@ -125,11 +96,10 @@
 }
 
 .services-card {
-    @extend .container__wrapper;
+    @include inner-x-padding;
     flex: 0 0 calc(50% - 10px);
     padding-top: 80px;
     padding-bottom: 80px;
-    border-radius: 30px;
 
     &:first-of-type {
         background: $colorSecondary url(../img/services/card-1-bg.png) -20% 50% / 172% auto no-repeat;
@@ -156,26 +126,14 @@
 
     // .services-card__title
     &__title {
-        @extend .h4;
         color: $white;
-        margin-bottom: 40px;
-
-        @media screen and (max-width: $breakpoint992) {
-            margin-bottom: 20px;
-        }
     }
 
     // .services-card__list
     &__list {
-        padding-top: 40px;
-        border-top: 1px solid $white;
         display: flex;
         flex-direction: column;
         gap: 20px;
-
-        @media screen and (max-width: $breakpoint992) {
-            padding-top: 20px;
-        }
     }
 
     // .services-card__list-item
@@ -192,19 +150,3 @@
     }
 }
 
-.commission-section {
-    position: relative;
-
-    &__gradient {
-        position: absolute;
-        z-index: -1;
-        top: -6vw;
-        right: -10vw;
-        width: 71vw;
-
-        @media screen and (max-width: $breakpoint768) {
-            top: 0;
-            width: 90vw;
-        }
-    }
-}
