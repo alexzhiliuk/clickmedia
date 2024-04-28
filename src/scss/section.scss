@@ -28,6 +28,10 @@
 
         p {
             @include text-2;
+
+            span {
+                color: $colorPrimary;
+            }
         }
     }
 

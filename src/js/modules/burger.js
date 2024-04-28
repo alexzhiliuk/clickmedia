@@ -1,3 +1,23 @@
+let contactInMobileMenu = false
+function moveMobileMenu() {
+    if (window.outerWidth < 1200 && !contactInMobileMenu) {
+        $(".header__contact").appendTo(".header__menu")
+        $(".header__contact").replaceWith('<li class="header__contact">' + $(".header__contact").html() +'</li>')
+        contactInMobileMenu = true
+        return
+    }
+    if (window.outerWidth >= 1200 && contactInMobileMenu) {
+        $(".header__contact").insertBefore(".header__burger")
+        $(".header__contact").replaceWith('<div class="header__contact">' + $(".header__contact").html() +'</div>')
+        contactInMobileMenu = false
+        return
+    }
+}
+moveMobileMenu()
+$(window).on("resize", function() {
+    moveMobileMenu()
+})
+
 $(".header__burger").click(function() {
     $(this).toggleClass("header__burger_active")
     let {top, left} = $(this).position(),
@@ -15,6 +35,7 @@ $(".header__burger").click(function() {
         wrapper.removeClass("header__wrapper_active")
         menu.removeClass("header__menu_active")
         contact.removeClass("header__contact_active")
+        $('.drop-menu').fadeOut();
     }
 
 
@@ -41,6 +62,48 @@ $(window).scroll(function(event){
 
 $('#services-show').click(function() {
     $(this).toggleClass('active');
-    $('.services-menu').fadeToggle();
-    $('body, html').toggleClass("lock");
+    $('.drop-menu').fadeToggle();
+
+    if (window.outerWidth >= 1600) {
+        $('body, html').toggleClass("lock");
+    } 
+    else if (!$("body").hasClass("lock")) {
+        $('body, html').toggleClass("lock");
+    }
 });
+
+$('#services-hide').click(function() {
+    $('#services-show').removeClass('active');
+    $(this).parents(".drop-menu").fadeToggle()
+    $('body, html').removeClass("lock");
+});
+
+$('#services-nav').click(function() {
+    let showValue = $(this).attr("data-show")
+    if (showValue == "main-menu") {
+        $('#services-show').removeClass('active');
+        $(this).parents(".drop-menu").fadeToggle()
+        return
+    }
+    if (showValue == "services") {
+        $(".drop-menu__list").removeClass("drop-menu__list_active")
+        $(".drop-menu__title").show()
+        $(".drop-menu__section").css("padding", "")
+        $(this).find("span").html("УСЛУГИ")
+        $(this).attr("data-show", "main-menu")
+        return
+    }
+});
+
+$(".drop-menu__title").click(function() {
+    if (window.outerWidth >= 1600) { return }
+
+    let sectionTitle = $(this).children("span").html()
+    $(this).parent().find(".drop-menu__list").addClass("drop-menu__list_active")
+
+    let header = $(this).parents(".drop-menu").find("#services-nav")
+    header.find("span").html(sectionTitle)
+    header.attr("data-show", "services")
+    $(".drop-menu__title").hide()
+    $(".drop-menu__section").css("padding", "0")
+})
