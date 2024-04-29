@@ -6,6 +6,10 @@
 
     @media screen and (max-width: $breakpoint1200) {
         flex-direction: column;
+
+        & > * {
+            width: 100%;
+        }
     }
 
     & > * {
@@ -28,6 +32,12 @@
         @extend .section__white-block;
         background: $white url(../img/cta-section/form-bg.png) 30% 45% / 220% auto no-repeat;
         flex: 0 0 56%;
+
+        &-text {
+            color: $gray400;
+            margin-top: 20px;
+            max-width: 750px;
+        }
     }
 
     // .cta__title
@@ -57,7 +67,6 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        margin-top: 80px;
 
         @media screen and (max-width: $breakpoint1200) {
             margin-top: 60px;
@@ -79,13 +88,17 @@
 
     // .cta__phone-block
     &__phone-block {
-        @extend .section__white-block;
         background: $colorSecondary url(../img/cta-section/phone-bg.png) 40% 70% / 240% auto no-repeat;
         position: sticky;
         top: 20px;
         
         @media screen and (max-width: $breakpoint1200) {
             width: 100%;
+        }
+
+        
+        &-text {
+            color: #B9D4FB;
         }
     }
 
@@ -94,6 +107,7 @@
         border-radius: 50%;
         width: 110px;
         height: 110px;
+        margin-bottom: 30px;
 
         position: relative;
 
@@ -117,7 +131,6 @@
     &__avatar-caption {
         @extend .h4;
         color: $white;
-        margin-top: 30px;
     }
 
     // .cta__phone-btn
@@ -135,6 +148,35 @@
 
         @media screen and (max-width: $breakpoint992) {
             margin-top: 40px;
+        }
+    }
+
+    &__services {
+        
+    }
+
+    &__service {
+
+        font-family: $headersFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 115%;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+
+        color: $gray400;
+
+        padding: 22px 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $borderColor;
+        }
+
+        @media screen and (max-width: $breakpoint576) {
+            font-size: 28px;
+            padding: 14px 0;
         }
     }
 }

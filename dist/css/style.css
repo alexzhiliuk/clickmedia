@@ -393,6 +393,11 @@ body {
   background: #EDF5FF;
   padding: 20px 60px;
 }
+@media screen and (max-width: 575.98px) {
+  body {
+    padding: 40px;
+  }
+}
 
 img {
   display: block;
@@ -734,6 +739,14 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   margin: 0 -40px;
   position: relative;
 }
+@media screen and (max-width: 575.98px) {
+  .section__body {
+    margin: 0 -20px;
+  }
+}
+.section__body_m_0 {
+  margin: 0;
+}
 .section__btn, .section__btn_centered {
   margin-top: 80px;
 }
@@ -751,12 +764,12 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   display: flex;
   justify-content: center;
 }
-.section__white-block, .cta__phone-block, .cta__form-block {
+.section__white-block, .cta__form-block {
   border-radius: 30px;
   background-color: #FFF;
 }
 @media screen and (max-width: 767.98px) {
-  .section__white-block, .cta__phone-block, .cta__form-block {
+  .section__white-block, .cta__form-block {
     border-radius: 18px;
   }
 }
@@ -772,6 +785,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+}
+.card__title span {
+  color: #FF6C22;
 }
 .card__header {
   padding-bottom: 40px;
@@ -804,6 +820,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   bottom: -1px;
   right: -40px;
   left: 100%;
+}
+.card__header_pb_0 {
+  padding-bottom: 0;
 }
 .card__footer {
   padding-top: 40px;
@@ -2585,6 +2604,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   .cta {
     flex-direction: column;
   }
+  .cta > * {
+    width: 100%;
+  }
 }
 .cta > * {
   padding-top: 60px;
@@ -2605,6 +2627,11 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 .cta__form-block {
   background: #FFF url(../img/cta-section/form-bg.png) 30% 45%/220% auto no-repeat;
   flex: 0 0 56%;
+}
+.cta__form-block-text {
+  color: #9FAEC2;
+  margin-top: 20px;
+  max-width: 750px;
 }
 .cta__title {
   font-family: HalvarBreit;
@@ -2633,7 +2660,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 80px;
 }
 @media screen and (max-width: 1199.98px) {
   .cta__form {
@@ -2658,10 +2684,14 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
     width: 100%;
   }
 }
+.cta__phone-block-text {
+  color: #B9D4FB;
+}
 .cta__avatar {
   border-radius: 50%;
   width: 110px;
   height: 110px;
+  margin-bottom: 30px;
   position: relative;
 }
 .cta__avatar::before {
@@ -2678,7 +2708,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 .cta__avatar-caption {
   color: #FFF;
-  margin-top: 30px;
 }
 .cta__phone-btn {
   background-color: #FFF;
@@ -2697,6 +2726,77 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   .cta__phone-btn {
     margin-top: 40px;
   }
+}
+.cta__service {
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 115%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  color: #9FAEC2;
+  padding: 22px 0;
+}
+.cta__service:not(:last-child) {
+  border-bottom: 1px solid #DAE3F0;
+}
+@media screen and (max-width: 575.98px) {
+  .cta__service {
+    font-size: 28px;
+    padding: 14px 0;
+  }
+}
+
+.trust__row {
+  display: flex;
+  gap: 20px;
+}
+.trust__row:not(:last-of-type) {
+  border-bottom: 1px solid #DAE3F0;
+}
+@media screen and (max-width: 575.98px) {
+  .trust__row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .trust__row:not(:last-of-type) {
+    border-bottom: unset;
+  }
+}
+.trust__item {
+  flex: 0 0 calc(50% - 10px);
+  padding: 80px 0;
+}
+@media screen and (max-width: 991.98px) {
+  .trust__item {
+    padding: 40px 0;
+  }
+}
+.trust__num {
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 110px;
+  line-height: 70%;
+  letter-spacing: -0.02em;
+  color: #1771F1;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1199.98px) {
+  .trust__num {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .trust__num {
+    font-size: 60px;
+  }
+}
+.trust__caption {
+  color: #6B7E99;
 }
 
 @font-face {

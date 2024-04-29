@@ -40,6 +40,14 @@
         margin: 0 -40px;
         position: relative;
 
+        @media screen and (max-width: $breakpoint576) {
+            margin: 0 -20px;
+        }
+
+        &_m_0 {
+            margin: 0;
+        }
+
     }
 
     &__btn {
@@ -84,7 +92,9 @@
     }
 
     &__title {
-
+        span {
+            color: $colorPrimary;
+        }
     }
 
     &__header {
@@ -120,6 +130,10 @@
                 right: -40px;
                 left: 100%;
             }
+        }
+
+        &_pb_0 {
+            padding-bottom: 0;
         }
     }
 

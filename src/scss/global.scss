@@ -54,6 +54,10 @@ body {
     justify-content: space-between;
     background: $gray300;
     padding: 20px 60px;
+
+    @media screen and (max-width: $breakpoint576) {
+        padding: 40px;
+    }
 }
 
 img {
