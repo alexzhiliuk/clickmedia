@@ -16,7 +16,13 @@
     }
 
     &__title {
-
+        &_centered {
+            text-align: center;
+            margin: 0 auto;
+        }
+        &_mw_900 {
+            max-width: 900px;
+        }
     }
 
     &__desc {
@@ -92,6 +98,7 @@
     }
 
     &__title {
+
         span {
             color: $colorPrimary;
         }
@@ -182,4 +189,79 @@
         }
     }
 
+}
+
+
+.image-card {
+
+    @extend .card;
+    padding: 10px 10px 40px;
+
+    &_row {
+        padding: 40px;
+        display: flex;
+        gap: 80px;
+
+        @media screen and (max-width: $breakpoint1200) {
+            flex-direction: column;
+            gap: 0;
+            padding: 40px 40px 0;
+        }
+
+        .image-card__img {
+            margin-bottom: 0;
+            height: 100%;
+        }
+
+        .image-card__content {
+            padding: 40px 0;
+            flex-grow: 1;
+        }
+    }
+
+    // .image-card__img
+    &__img {
+        margin-bottom: 30px;
+        border-radius: 20px;
+        background-color: #EFF3F9;
+        height: 260px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: $breakpoint1200) {
+            height: 200px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            border-radius: 8px;
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+
+    // .image-card__content
+    &__content {
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: $breakpoint576) {
+            padding: 0 10px;
+        }
+    }
+
+    // .image-card__title
+    &__title {
+        color: $black;
+        margin-bottom: 14px;
+    }
+
+    // .image-card__text
+    &__text {
+        color: $gray500;
+    }
 }

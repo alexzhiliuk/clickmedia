@@ -96,6 +96,7 @@ button {
     border-radius: 100px;
     padding: 22px 60px;
     background-color: $colorPrimary;
+    color: $white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,6 +115,19 @@ button {
 
     @media screen and (max-width: $breakpoint576) {
         max-width: 100%;
+    }
+
+    &_outline {
+        border: 2px solid $colorPrimary;
+        color: $colorPrimary;
+        background-color: unset;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: lighten($color: $colorPrimary, $amount: 5);
+                color: $white;
+            }
+        }
     }
 
     &_sm {
@@ -135,6 +149,15 @@ button {
         @media (hover: hover) {
             &:hover {
                 background-color: darken($color: $white, $amount: 5);
+            }
+        }
+    }
+
+    &_blue {
+        background-color: $colorSecondary;
+        @media (hover: hover) {
+            &:hover {
+                background-color: darken($color: $colorSecondary, $amount: 5);
             }
         }
     }

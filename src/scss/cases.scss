@@ -1,0 +1,140 @@
+.cases {
+
+    &__btn {
+        margin-top: 40px;
+        max-width: 100%;
+    }
+}
+
+.case {
+
+
+    &__img.image-card__img {
+        height: 700px;
+        width: 950px;
+
+        @media screen and (max-width: $breakpoint1200) {
+            width: 100%;
+            height: 500px;
+        }
+
+
+        @media screen and (max-width: $breakpoint768) {
+            height: 300px;
+        }
+
+        img {
+            max-width: 64%;
+            max-height: 64%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__content {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 500px;
+    }
+
+    // .case__title
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    // .case__tags
+    &__tags {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 60px;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-bottom: 40px;
+        }
+    }
+
+    // .case__metrics
+    &__metrics {
+    }
+
+    // .case__metric
+    &__metric {
+        border-bottom: 1px solid $borderColor;
+    }
+
+    // .case__btn
+    &__btn {
+        margin-top: auto;
+        max-width: 100%;
+
+        @media screen and (max-width: $breakpoint1200) {
+            margin-top: 40px;
+        }
+    }
+}
+
+.metric {
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    @media screen and (max-width: $breakpoint576) {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    // .metric__title
+    &__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 155%;
+        letter-spacing: -0.01em;
+
+        color: $gray500;
+
+        @media screen and (max-width: $breakpoint576) {
+            flex: 0 0 100%;
+        }
+    }
+
+    // .metric__value
+    &__value {
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 100%;
+        text-align: center;
+
+        color: $black;
+        margin-left: auto;
+
+        @media screen and (max-width: $breakpoint576) {
+            margin-left: 0;
+        }
+
+    }
+
+    // .metric__percent
+    &__percent {
+        display: flex;
+        align-items: center;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 90%;
+        letter-spacing: -0.01em;
+
+        color: #32BF7B;
+    }
+}
+

@@ -33,57 +33,6 @@
     }
 }
 
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-
-    @media screen and (max-width: $breakpoint992) {
-        gap: 10px;
-    }
-
-    @media screen and (max-width: $breakpoint768) {
-        padding-bottom: 20px;
-    }
-}
-
-.tag {
-    padding: 20px 30px;
-    border-radius: 100px;
-    background-color: rgba($color: #C8D5E8, $alpha: .2);
-
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 100%;
-    letter-spacing: -0.01em;
-    color: $black;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-
-    @media screen and (max-width: $breakpoint1400) {
-        font-size: 18px;
-        padding: 16px 24px;
-
-        img {
-            width: 34px;
-        }
-    }
-
-    @media screen and (max-width: $breakpoint768) {
-        font-size: 16px;
-        padding: 12px 18px;
-
-        img {
-            width: 28px;
-        }
-    }
-}
-
 
 
 .services-cards {
