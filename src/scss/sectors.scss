@@ -1,0 +1,21 @@
+.sectors {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+
+        @media screen and (max-width: $breakpoint1400) {
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            width: 100%;
+            overflow: scroll;
+            overflow-y: hidden;
+        }
+    }
+}

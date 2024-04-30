@@ -1,0 +1,118 @@
+.banner {
+
+    position: relative;
+    background: $white url(../img/banner/bg.svg) 0 0  / auto auto no-repeat;;
+
+    // .banner__title
+    &__title {
+        color: $black;
+
+        span {
+            color: $colorPrimary;
+        }
+
+    }
+
+    // .banner__items
+    &__items {
+        @extend .hero__items;
+    }
+
+    // .banner__item
+    &__item {
+        @extend .hero__item;
+    }
+
+    // .banner__item-marker
+    &__item-marker {
+        @extend .hero__item-marker;
+    }
+
+    // .banner__item-text
+    &__item-text {
+        @extend .hero__item-text;
+    }
+
+    // .banner__form
+    &__form {
+        margin-top: 120px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @media screen and (max-width: $breakpoint1600) {
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width: $breakpoint1200) {
+            flex-direction: column;
+            margin-top: 60px;
+
+            & > * {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        & * {
+            transition: 0.5s ease all;
+        }
+    }
+
+    // .banner__link
+    &__link {
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 165%;
+        letter-spacing: -0.01em;
+
+        color: $colorPrimary;
+        gap: 10px;
+
+        display: flex;
+        align-items: center;
+        padding: 9px 16px 7px;
+        margin-left: -16px;
+        border-radius: 16px;
+        margin-right: 40px;
+
+        &:hover {
+            background-color: $colorPrimary;
+            color: $white;
+
+            svg path {
+                fill: $white;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint1600) {
+            flex: 0 0 100%;
+        }
+
+        @media screen and (max-width: $breakpoint1200) {
+            margin-right: 0;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            font-size: 18px;
+
+            svg {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
+    }
+
+    // .banner__input
+    &__input {
+        flex-grow: 1;
+    }
+
+    // .banner__btn
+    &__btn {
+    }
+}
+

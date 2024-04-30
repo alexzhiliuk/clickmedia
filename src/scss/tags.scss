@@ -10,6 +10,10 @@
     @media screen and (max-width: $breakpoint768) {
         padding-bottom: 20px;
     }
+
+    &_centered {
+        justify-content: center;
+    }
 }
 
 .tag {
@@ -24,6 +28,7 @@
     line-height: 100%;
     letter-spacing: -0.01em;
     color: $black;
+    text-align: center;
 
     display: flex;
     align-items: center;
@@ -50,6 +55,10 @@
 
     &_pi_40 {
         padding: 20px 40px;
+    }
+
+    &_white {
+        background: $white;
     }
 
     &_sm {
