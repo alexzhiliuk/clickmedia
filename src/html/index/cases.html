@@ -5,12 +5,12 @@
     </div>
     <div class="section__desc">
         <div class="slider-section__title-wrapper">
-            <a href="javascript:void(0)" class="tags">
-                <div class="tag tag_pi_40 tag_outline tag_active">Все кейсы</div>
-                <div class="tag tag_pi_40 tag_outline">Разработка</div>
-                <div class="tag tag_pi_40 tag_outline">Продвижение</div>
-                <div class="tag tag_pi_40 tag_outline">Реклама</div>
-            </a>
+            <div class="tags">
+                <a href="javascript:void(0)" class="tag tag_pi_40 tag_outline tag_active" data-tabs="cases" data-tab-btn="1">Все кейсы</a>
+                <a href="javascript:void(0)" class="tag tag_pi_40 tag_outline" data-tabs="cases" data-tab-btn="2">Разработка</a>
+                <a href="javascript:void(0)" class="tag tag_pi_40 tag_outline" data-tabs="cases" data-tab-btn="3">Продвижение</a>
+                <a href="javascript:void(0)" class="tag tag_pi_40 tag_outline" data-tabs="cases" data-tab-btn="4">Реклама</a>
+            </div>
             <div class="slider-section__btns">
                 <div class="cases__slider-btn_prev slider-section__btn">
                     <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="section__body cases">
-        <div class="cases-slider swiper">
+        <div class="cases-slider swiper" data-tabs="cases" data-tab-id="1">
             <div class="swiper-wrapper">
                 <div class="swiper-slide cases-slide case image-card image-card_row">
                     <div class="image-card__img case__img">

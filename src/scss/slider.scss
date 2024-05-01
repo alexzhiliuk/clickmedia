@@ -6,6 +6,32 @@
         align-items: center;
         justify-content: space-between;
         gap: 20px;
+
+        @media screen and (max-width: $breakpoint576) {
+            flex-direction: column;
+            .tags {
+                width: 100%;
+                overflow-x: scroll;
+                flex-wrap: nowrap;
+                margin: 0 -40px;
+                width: 100vw;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .tag {
+                    white-space: nowrap;
+
+                    &:first-child {
+                        margin-left: 20px;
+                    }
+                    &:last-child {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
     }
 
     // .slider-section__btns

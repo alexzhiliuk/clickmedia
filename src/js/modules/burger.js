@@ -35,7 +35,8 @@ $(".header__burger").click(function() {
         wrapper.removeClass("header__wrapper_active")
         menu.removeClass("header__menu_active")
         contact.removeClass("header__contact_active")
-        $('.drop-menu').fadeOut();
+        $('.drop-menu').hide();
+        $(".header__menu").css("overflow", "")
     }
 
 
@@ -62,7 +63,8 @@ $(window).scroll(function(event){
 
 $('#services-show').click(function() {
     $(this).toggleClass('active');
-    $('.drop-menu').fadeToggle();
+    $('.drop-menu').show();
+    $(".header__menu").css("overflow", "hidden")
 
     if (window.outerWidth >= 1600) {
         $('body, html').toggleClass("lock");
@@ -74,7 +76,8 @@ $('#services-show').click(function() {
 
 $('#services-hide').click(function() {
     $('#services-show').removeClass('active');
-    $(this).parents(".drop-menu").fadeToggle()
+    $(this).parents(".drop-menu").hide()
+    $(".header__menu").css("overflow", "")
     $('body, html').removeClass("lock");
 });
 
@@ -82,7 +85,8 @@ $('#services-nav').click(function() {
     let showValue = $(this).attr("data-show")
     if (showValue == "main-menu") {
         $('#services-show').removeClass('active');
-        $(this).parents(".drop-menu").fadeToggle()
+        $(this).parents(".drop-menu").hide()
+        $(".header__menu").css("overflow", "")
         return
     }
     if (showValue == "services") {

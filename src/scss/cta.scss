@@ -21,10 +21,6 @@
             padding-bottom: 40px;
         }
 
-        @media screen and (max-width: $breakpoint768) {
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
     }
 
     // .cta__form-block
@@ -153,7 +149,11 @@
     }
 
     &__services {
-        
+        &:hover {
+            .cta__service:not(:hover) {
+                color: $gray400;
+            }
+        }
     }
 
     &__service {
@@ -167,7 +167,8 @@
         align-items: center;
         letter-spacing: -0.01em;
 
-        color: $gray400;
+        color: $black;
+        transition: .3s ease all;
 
         padding: 22px 0;
 

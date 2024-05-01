@@ -1,3 +1,27 @@
+@mixin header-bg {
+    background: rgba($color: $white, $alpha: .5);
+    backdrop-filter: blur(15px) brightness(1.1);
+    -webkit-backdrop-filter: blur(15px) brightness(1.1);
+    box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
+
+    .header__check:hover {
+        background-color: rgba($color: $colorSecondary, $alpha: .1);
+    }
+
+    .header__phone-icon:hover {
+        background-color: rgba($color: $colorSecondary, $alpha: .1);
+    }
+
+    .header__menu-link:hover,
+    .header__menu-link.active {
+        background-color: rgba($color: $colorSecondary, $alpha: .1) !important;
+    }
+
+    .header__phone-link:hover {
+        background-color: rgba($color: $colorSecondary, $alpha: .1);
+    }
+}
+
 .header {
     position: fixed;
     top: 20px;
@@ -16,6 +40,13 @@
     &_scrolled {
         translate: 0 -100%;
         top: -10px;
+
+        @media screen and (max-width: $breakpoint576) {
+            .header__menu_active {
+                top: 110px;
+                height: calc(100dvh - 20px);
+            }
+        }
     }
 
     // .header__nav
@@ -30,32 +61,16 @@
         border-radius: 32px;
         transition: .5s ease all;
 
+        @media screen and (max-width: $breakpoint768) {
+            @include header-bg;
+        }
+
         @media screen and (max-width: $breakpoint576) {
             margin: 0 -10px;
         }
 
         &_bg {
-            background: rgba($color: $white, $alpha: .5);
-            backdrop-filter: blur(15px) brightness(1.1);
-            -webkit-backdrop-filter: blur(15px) brightness(1.1);
-            box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
-
-            .header__check:hover {
-                background-color: rgba($color: $colorSecondary, $alpha: .1);
-            }
-
-            .header__phone-icon:hover {
-                background-color: rgba($color: $colorSecondary, $alpha: .1);
-            }
-
-            .header__menu-link:hover,
-            .header__menu-link.active {
-                background-color: rgba($color: $colorSecondary, $alpha: .1) !important;
-            }
-
-            .header__phone-link:hover {
-                background-color: rgba($color: $colorSecondary, $alpha: .1);
-            }
+            @include header-bg;
         }
 
         // .header__nav_active
@@ -131,8 +146,10 @@
         @media screen and (max-width: $burgerBreakpoint) {
             display: none;
             flex-direction: column;
+            justify-content: unset;
 
             &_active {
+                overflow-x: scroll;
                 display: flex;
                 position: fixed;
                 z-index: 9;
@@ -143,19 +160,30 @@
                 height: calc(100dvh - 180px);
                 border-radius: 32px;
                 transition: 0.5s ease all;
-                background: rgba(255, 255, 255, 0.8);
+                background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(15px) brightness(1.1);
                 -webkit-backdrop-filter: blur(15px) brightness(1.1);
                 box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            &_active {
+                border-radius: 16px;
+                left: 0;
+                top: 110px;
+                padding: 10px;
+                height: calc(100dvh - 150px);
             }
         }
 
         @media screen and (max-width: $breakpoint576) {
             &_active {
-                border-radius: 20px;
-                left: 0;
                 top: 100px;
-                padding: 10px;
                 height: calc(100dvh - 120px);
             }
         }
@@ -462,14 +490,19 @@
 }
 
 .drop-menu {
+    border: 1px solid green;
     display: none;
     position: fixed;
     z-index: 9;
-    left: 20px;
-    top: 160px;
-    width: calc(100dvw - 40px);
+    // left: 20px;
+    left: 0;
+    // top: 160px;
+    top: 0;
+    // width: calc(100dvw - 40px);
+    width: 100%;
     padding: 30px;
-    height: calc(100dvh - 180px);
+    // height: calc(100dvh - 180px);
+    height: 100%;
     border-radius: 32px;
     transition: 0.5s ease all;
     background: rgba(255, 255, 255, 0.8);
@@ -486,13 +519,26 @@
         gap: unset;
         flex-wrap: nowrap;
         overflow: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        border-radius: 16px;
+        padding: 30px 20px;
+        // height: calc(100dvh - 150px);
+        // top: 130px;
     }
 
     @media screen and (max-width: $breakpoint576) {
-        padding: 30px 20px;
-        height: calc(100dvh - 120px);
-        top: 110px;
-        border-radius: 20px;
+        // top: 110px;
+        // left: 10px;
+        padding: 30px 10px;
+        // width: calc(100dvw - 20px);
+        // height: calc(100dvh - 120px);
+        
     }
 
     &__header {

@@ -3,7 +3,8 @@
     padding-bottom: 60px;
 
     @media screen and (max-width: $breakpoint768) {
-        padding-bottom: 80px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     &__header {
@@ -50,6 +51,30 @@
             margin: 0 -20px;
         }
 
+        &_slider {
+            margin: 0 -60px;
+
+            @media screen and (max-width: $breakpoint576) {
+                margin: 0 -40px;
+            }
+
+            & > * {
+                overflow-x: scroll;
+                overflow-y: hidden;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                & > *:first-child {
+                    margin-left: 20px;
+                }
+
+                & > *:last-child {
+                    margin-right: 20px;
+                }
+            }
+        }
+
         &_m_0 {
             margin: 0;
         }
@@ -93,8 +118,8 @@
 
     @media screen and (max-width: $breakpoint768) {
         border-radius: 18px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        // padding-top: 20px;
+        // padding-bottom: 20px;
     }
 
     &__title {

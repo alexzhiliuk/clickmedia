@@ -3,11 +3,13 @@
 
 .high-level-service {
     display: flex;
+    // justify-content: center;
     gap: 20px;
     width: 100%;
     overflow: scroll;
 
     & > * {
         flex: 0 0 calc(33.33% - 20px * 3 / 4);
+        max-width: 614px;
     }
 }
