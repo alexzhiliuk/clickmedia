@@ -53,6 +53,8 @@
 
         &_wrapped {
             & > * {
+                display: flex;
+                gap: 20px;
                 flex-wrap: wrap;
             }
         }
@@ -231,14 +233,71 @@
 
 }
 
+.icon-cards {
+
+    &_slider {
+        .icon-card {
+            &_1_6 {
+                min-width: max(275px,  calc(100% / 6 - 20px * 7 / 6));
+                flex-basis: calc(100% / 6 - 20px * 7 / 6);
+            }
+
+            &_1_5 {
+                min-width: max(275px, calc(20% - 20px * 6 / 5));
+                flex-basis: calc(20% - 20px * 6 / 5);
+            }
+        }
+    }
+
+    &_mobile_slider {
+        @media screen and (max-width: $breakpoint1200) {
+            margin: 0 -20px;
+            width: 100vw;
+            flex-wrap: nowrap;
+            overflow: auto;
+            overflow-y: hidden;
+            .icon-card {
+                &:first-child {
+                    margin-left: 20px;
+                }
+                &:last-child {
+                    margin-right: 20px;
+                }
+                &_1_4 {
+                    min-width: 275px;
+                }
+            }
+        }
+    }
+
+}
+
 .icon-card {
     @extend .card;
     padding: 60px 40px;
 
-    flex-grow: 1;
+    &_1_6 {
+        flex-basis: calc(100% / 6 - 20px * 5 / 6);
+
+        @media screen and (max-width: $breakpoint1200) {
+            flex-basis: calc(33.33% - 20px * 2 / 3);
+        }
+    }
 
     &_1_5 {
-        min-width: max(275px, calc(20% - 20px * 6 / 5));
+        flex-basis: calc(20% - 20px * 4 / 5);
+
+        @media screen and (max-width: $breakpoint1200) {
+            flex-basis: calc(33.33% - 20px * 2 / 3);
+        }
+    }
+
+    &_1_4 {
+        flex-basis: calc(25% - 20px * 3 / 4);
+
+        @media screen and (max-width: $breakpoint1200) {
+            flex-basis: calc(33.33% - 20px * 2 / 3);
+        }
     }
 
     &__icon {

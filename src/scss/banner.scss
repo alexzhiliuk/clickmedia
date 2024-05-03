@@ -3,12 +3,27 @@
     position: relative;
     background: $white url(../img/banner/bg.svg) 0 0  / auto auto no-repeat;
 
+    &_centered {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & * {
+            max-width: 1200px;
+        }
+    }
+
     &_blue {
         background: $colorSecondary url(../img/banner/bg.svg) 0 0  / auto auto no-repeat;
         color: $white;
 
         .banner__title {
             color: $white;
+        }
+
+        .banner__desc {
+            color: #B9D4FB;
         }
     }
 
@@ -24,8 +39,8 @@
 
     // .banner__desc
     &__desc {
-        margin-top: 10px;
-        color: #B9D4FB;
+        margin-top: 20px;
+        color: $gray400;
         display: flex;
         flex-direction: column;
         gap: 20px;

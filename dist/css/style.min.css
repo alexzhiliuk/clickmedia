@@ -792,6 +792,8 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 .section__body_wrapped > * {
+  display: flex;
+  gap: 20px;
   flex-wrap: wrap;
 }
 .section__body_slider {
@@ -940,12 +942,59 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   color: #FFF;
 }
 
+.icon-cards_slider .icon-card_1_6 {
+  min-width: max(275px, 16.6666666667% - 23.3333333333px);
+  flex-basis: calc(16.6666666667% - 23.3333333333px);
+}
+.icon-cards_slider .icon-card_1_5 {
+  min-width: max(275px, 20% - 24px);
+  flex-basis: calc(20% - 24px);
+}
+@media screen and (max-width: 1199.98px) {
+  .icon-cards_mobile_slider {
+    margin: 0 -20px;
+    width: 100vw;
+    flex-wrap: nowrap;
+    overflow: auto;
+    overflow-y: hidden;
+  }
+  .icon-cards_mobile_slider .icon-card:first-child {
+    margin-left: 20px;
+  }
+  .icon-cards_mobile_slider .icon-card:last-child {
+    margin-right: 20px;
+  }
+  .icon-cards_mobile_slider .icon-card_1_4 {
+    min-width: 275px;
+  }
+}
+
 .icon-card {
   padding: 60px 40px;
-  flex-grow: 1;
+}
+.icon-card_1_6 {
+  flex-basis: calc(16.6666666667% - 16.6666666667px);
+}
+@media screen and (max-width: 1199.98px) {
+  .icon-card_1_6 {
+    flex-basis: calc(33.33% - 13.3333333333px);
+  }
 }
 .icon-card_1_5 {
-  min-width: max(275px, 20% - 24px);
+  flex-basis: calc(20% - 16px);
+}
+@media screen and (max-width: 1199.98px) {
+  .icon-card_1_5 {
+    flex-basis: calc(33.33% - 13.3333333333px);
+  }
+}
+.icon-card_1_4 {
+  flex-basis: calc(25% - 15px);
+}
+@media screen and (max-width: 1199.98px) {
+  .icon-card_1_4 {
+    flex-basis: calc(33.33% - 13.3333333333px);
+  }
 }
 .icon-card__icon {
   width: 50px;
@@ -3323,12 +3372,24 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   position: relative;
   background: #FFF url(../img/banner/bg.svg) 0 0/auto auto no-repeat;
 }
+.banner_centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.banner_centered * {
+  max-width: 1200px;
+}
 .banner_blue {
   background: #1771F1 url(../img/banner/bg.svg) 0 0/auto auto no-repeat;
   color: #FFF;
 }
 .banner_blue .banner__title {
   color: #FFF;
+}
+.banner_blue .banner__desc {
+  color: #B9D4FB;
 }
 .banner__title {
   color: #383838;
@@ -3337,8 +3398,8 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   color: #FF6C22;
 }
 .banner__desc {
-  margin-top: 10px;
-  color: #B9D4FB;
+  margin-top: 20px;
+  color: #9FAEC2;
   display: flex;
   flex-direction: column;
   gap: 20px;
