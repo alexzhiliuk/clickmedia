@@ -1,7 +1,16 @@
 .banner {
 
     position: relative;
-    background: $white url(../img/banner/bg.svg) 0 0  / auto auto no-repeat;;
+    background: $white url(../img/banner/bg.svg) 0 0  / auto auto no-repeat;
+
+    &_blue {
+        background: $colorSecondary url(../img/banner/bg.svg) 0 0  / auto auto no-repeat;
+        color: $white;
+
+        .banner__title {
+            color: $white;
+        }
+    }
 
     // .banner__title
     &__title {
@@ -11,6 +20,15 @@
             color: $colorPrimary;
         }
 
+    }
+
+    // .banner__desc
+    &__desc {
+        margin-top: 10px;
+        color: #B9D4FB;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     // .banner__items
@@ -35,7 +53,13 @@
 
     // .banner__form
     &__form {
-        margin-top: 120px;
+        &:not(:first-child) {
+            margin-top: 120px;
+            @media screen and (max-width: $breakpoint1200) {
+                margin-top: 60px;
+            }
+        }
+
         display: flex;
         align-items: center;
         gap: 20px;
@@ -45,7 +69,6 @@
         }
         @media screen and (max-width: $breakpoint1200) {
             flex-direction: column;
-            margin-top: 60px;
 
             & > * {
                 width: 100%;
@@ -55,6 +78,13 @@
 
         & * {
             transition: 0.5s ease all;
+        }
+    }
+
+    // .banner__form-text
+    &__form-text {
+        @media screen and (max-width: $breakpoint1600) {
+            flex: 0 0 100%;
         }
     }
 
@@ -113,6 +143,7 @@
 
     // .banner__btn
     &__btn {
+
     }
 }
 

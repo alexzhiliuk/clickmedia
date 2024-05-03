@@ -11,6 +11,9 @@
 
     // .hero__title
     &__title {
+        span {
+            color: $colorPrimary;
+        }
     }
 
     // .hero__subtitle
@@ -36,6 +39,11 @@
             font-size: 16px;
         }
 
+    }
+
+    // .hero__text
+    &__text {
+        margin-top: 20px;
     }
 
     // .hero__items

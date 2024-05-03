@@ -51,6 +51,12 @@
             margin: 0 -20px;
         }
 
+        &_wrapped {
+            & > * {
+                flex-wrap: wrap;
+            }
+        }
+
         &_slider {
             margin: 0 -60px;
 
@@ -61,6 +67,9 @@
             & > * {
                 overflow-x: scroll;
                 overflow-y: hidden;
+                display: flex;
+                gap: 20px;
+                width: 100%;
                 &::-webkit-scrollbar {
                     display: none;
                 }
@@ -79,6 +88,12 @@
             margin: 0;
         }
 
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
 
     &__btn {
@@ -216,15 +231,42 @@
 
 }
 
+.icon-card {
+    @extend .card;
+    padding: 60px 40px;
+
+    flex-grow: 1;
+
+    &_1_5 {
+        min-width: max(275px, calc(20% - 20px * 6 / 5));
+    }
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+
+        svg {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        color: $black;
+        margin-top: 30px;
+    }
+}
 
 .image-card {
 
     @extend .card;
     padding: 10px 10px 40px;
+    display: flex;
+    flex-direction: column;
 
     &_row {
         padding: 40px;
         display: flex;
+        flex-direction: row;
         gap: 80px;
 
         @media screen and (max-width: $breakpoint1200) {
@@ -241,6 +283,14 @@
         .image-card__content {
             padding: 40px 0;
             flex-grow: 1;
+        }
+    }
+
+    &_centered {
+        text-align: center;
+
+        .image-card__content {
+            align-items: center;
         }
     }
 
@@ -263,8 +313,15 @@
             border-radius: 8px;
         }
 
+        &_bg_white {
+            background-color: unset;
+        }
+
         img {
-            height: 100%;
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
         }
     }
 
@@ -273,6 +330,7 @@
         padding: 0 30px;
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
 
         @media screen and (max-width: $breakpoint576) {
             padding: 0 10px;
@@ -283,10 +341,27 @@
     &__title {
         color: $black;
         margin-bottom: 14px;
+
+        span {
+            color: $colorPrimary;
+        }
     }
 
     // .image-card__text
     &__text {
         color: $gray500;
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+
+        span {
+            color: $black;
+        }
+    }
+
+    // .image-card__btn
+    &__btn {
+        margin-top: auto;
     }
 }

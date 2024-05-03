@@ -598,7 +598,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   font-size: 32px;
   line-height: 115%;
   letter-spacing: -0.01em;
-  color: #383838;
 }
 @media screen and (max-width: 1199.98px) {
   h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
@@ -611,13 +610,21 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 
+.text-1 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 155%;
+  letter-spacing: -0.02em;
+}
+
 .text-2, .raiting-banner__text, .advantage__cta-subtitle, .advantage__property-body {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 165%;
-  color: #383838;
 }
 @media screen and (max-width: 1199.98px) {
   .text-2, .raiting-banner__text, .advantage__cta-subtitle, .advantage__property-body {
@@ -640,6 +647,25 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 @media screen and (max-width: 991.98px) {
   .text-3, .certificates-slide__text, .certificates-slide__title, .raiting-slide__list-item, .raiting-slide__body, .raiting-slide__date, .advantage__property-title, .footer__contacts-email, .footer__info-text, .footer__info-title {
     font-size: 18px;
+  }
+}
+
+.text-4 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 135%;
+  letter-spacing: -0.01em;
+}
+@media screen and (max-width: 991.98px) {
+  .text-4 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .text-4 {
+    font-size: 20px;
   }
 }
 
@@ -765,6 +791,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
     margin: 0 -20px;
   }
 }
+.section__body_wrapped > * {
+  flex-wrap: wrap;
+}
 .section__body_slider {
   margin: 0 -60px;
 }
@@ -776,6 +805,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 .section__body_slider > * {
   overflow-x: scroll;
   overflow-y: hidden;
+  display: flex;
+  gap: 20px;
+  width: 100%;
 }
 .section__body_slider > *::-webkit-scrollbar {
   display: none;
@@ -788,6 +820,11 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 .section__body_m_0 {
   margin: 0;
+}
+.section__btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .section__btn, .section__btn_centered {
   margin-top: 80px;
@@ -816,13 +853,13 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 
-.card, .image-card {
+.card, .image-card, .icon-card {
   border-radius: 30px;
   background-color: #FFF;
   padding: 40px;
 }
 @media screen and (max-width: 767.98px) {
-  .card, .image-card {
+  .card, .image-card, .icon-card {
     border-radius: 18px;
   }
 }
@@ -903,12 +940,34 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   color: #FFF;
 }
 
+.icon-card {
+  padding: 60px 40px;
+  flex-grow: 1;
+}
+.icon-card_1_5 {
+  min-width: max(275px, 20% - 24px);
+}
+.icon-card__icon {
+  width: 50px;
+  height: 50px;
+}
+.icon-card__icon svg {
+  width: 100%;
+}
+.icon-card__text {
+  color: #383838;
+  margin-top: 30px;
+}
+
 .image-card {
   padding: 10px 10px 40px;
+  display: flex;
+  flex-direction: column;
 }
 .image-card_row {
   padding: 40px;
   display: flex;
+  flex-direction: row;
   gap: 80px;
 }
 @media screen and (max-width: 1199.98px) {
@@ -925,6 +984,12 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 .image-card_row .image-card__content {
   padding: 40px 0;
   flex-grow: 1;
+}
+.image-card_centered {
+  text-align: center;
+}
+.image-card_centered .image-card__content {
+  align-items: center;
 }
 .image-card__img {
   margin-bottom: 30px;
@@ -945,13 +1010,20 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
     border-radius: 8px;
   }
 }
+.image-card__img_bg_white {
+  background-color: unset;
+}
 .image-card__img img {
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 .image-card__content {
   padding: 0 30px;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 @media screen and (max-width: 575.98px) {
   .image-card__content {
@@ -962,8 +1034,20 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   color: #383838;
   margin-bottom: 14px;
 }
+.image-card__title span {
+  color: #FF6C22;
+}
 .image-card__text {
   color: #6B7E99;
+}
+.image-card__text:not(:last-child) {
+  margin-bottom: 40px;
+}
+.image-card__text span {
+  color: #383838;
+}
+.image-card__btn {
+  margin-top: auto;
 }
 
 .slider-section__title-wrapper {
@@ -1176,6 +1260,62 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   background-color: #FF6C22;
   border-color: #FF6C22;
   color: #FFF;
+}
+
+.top-panel {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media screen and (max-width: 1199.98px) {
+  .top-panel {
+    margin: 0 -20px;
+    width: 100vw;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+  .top-panel > *:first-child {
+    margin-left: 20px;
+  }
+  .top-panel > *:last-child {
+    margin-right: 20px;
+  }
+}
+.top-panel::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  left: calc(-1 * (100vw - 100%) / 2);
+  width: 100vw;
+  height: 760px;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(237, 245, 255, 0) 85.46%);
+}
+@media screen and (max-width: 1199.98px) {
+  .top-panel::before {
+    display: none;
+  }
+}
+.top-panel__item {
+  border-radius: 20px 20px 0 0;
+  color: #6B7E99;
+  padding: 24px 40px;
+}
+@media screen and (max-width: 1199.98px) {
+  .top-panel__item {
+    padding: 20px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .top-panel__item {
+    font-size: 16px;
+  }
+}
+.top-panel__item_active {
+  color: #383838;
+  background-color: #FFF;
 }
 
 .header {
@@ -2074,6 +2214,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
     padding-top: 40px;
   }
 }
+.hero__title span {
+  color: #FF6C22;
+}
 .hero__subtitle {
   font-family: "HalvarBreit";
   font-style: normal;
@@ -2093,6 +2236,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   .hero__subtitle {
     font-size: 16px;
   }
+}
+.hero__text {
+  margin-top: 20px;
 }
 .hero__items, .banner__items {
   display: flex;
@@ -3002,7 +3148,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   overflow: scroll;
 }
 .high-level-service > * {
-  flex: 0 0 calc(33.33% - 15px);
+  flex: 0 0 calc(33.33% - 26.6666666667px);
   max-width: 614px;
 }
 
@@ -3177,17 +3323,38 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   position: relative;
   background: #FFF url(../img/banner/bg.svg) 0 0/auto auto no-repeat;
 }
+.banner_blue {
+  background: #1771F1 url(../img/banner/bg.svg) 0 0/auto auto no-repeat;
+  color: #FFF;
+}
+.banner_blue .banner__title {
+  color: #FFF;
+}
 .banner__title {
   color: #383838;
 }
 .banner__title span {
   color: #FF6C22;
 }
+.banner__desc {
+  margin-top: 10px;
+  color: #B9D4FB;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .banner__form {
-  margin-top: 120px;
   display: flex;
   align-items: center;
   gap: 20px;
+}
+.banner__form:not(:first-child) {
+  margin-top: 120px;
+}
+@media screen and (max-width: 1199.98px) {
+  .banner__form:not(:first-child) {
+    margin-top: 60px;
+  }
 }
 @media screen and (max-width: 1599.98px) {
   .banner__form {
@@ -3197,7 +3364,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 @media screen and (max-width: 1199.98px) {
   .banner__form {
     flex-direction: column;
-    margin-top: 60px;
   }
   .banner__form > * {
     width: 100%;
@@ -3206,6 +3372,11 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 .banner__form * {
   transition: 0.5s ease all;
+}
+@media screen and (max-width: 1599.98px) {
+  .banner__form-text {
+    flex: 0 0 100%;
+  }
 }
 .banner__link {
   font-family: "Montserrat";
@@ -3288,6 +3459,19 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 @media screen and (max-width: 767.98px) {
   .sectors__inner {
     padding: 0 20px;
+  }
+}
+
+.adv-types {
+  display: flex;
+  gap: 20px;
+}
+.adv-types > * {
+  flex: 0 0 calc(50% - 10px);
+}
+@media screen and (max-width: 1199.98px) {
+  .adv-types > * {
+    flex: 0 0 100%;
   }
 }
 
