@@ -9,3 +9,21 @@ import * as tabs from './modules/tabs.js';
 
 
 flsFunctions.isWebp()
+
+let sectionsOffset = new Object()
+
+for (let panel of $(".top-panel__item")) {
+    let sectionId = panel.id.slice(4)
+    sectionsOffset[sectionId] = $(`#${sectionId}`).offset().top
+}
+
+$(window).on("scroll", function() {
+
+    let scrollTop = $(window).scrollTop()
+    for (let sectionId in sectionsOffset) {
+        if (scrollTop > sectionsOffset[sectionId] - 200 && scrollTop < sectionsOffset[sectionId] + 200) {
+            $(".top-panel__item").removeClass("top-panel__item_active")
+            $(`#for-${sectionId}`).addClass("top-panel__item_active")
+        }
+    }
+})

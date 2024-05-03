@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    transition: all 1s ease-out;
 
     @media screen and (max-width: $breakpoint1200) {
         margin: 0 -20px;

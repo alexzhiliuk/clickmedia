@@ -1312,6 +1312,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   display: flex;
   align-items: center;
   position: relative;
+  transition: all 1s ease-out;
 }
 @media screen and (max-width: 1199.98px) {
   .top-panel {
