@@ -323,15 +323,12 @@
     flex-direction: column;
 
     &_row {
-        padding: 40px;
+        padding: 10px;
         display: flex;
         flex-direction: row;
-        gap: 80px;
 
         @media screen and (max-width: $breakpoint1200) {
             flex-direction: column;
-            gap: 0;
-            padding: 40px 40px 0;
         }
 
         .image-card__img {
@@ -340,7 +337,7 @@
         }
 
         .image-card__content {
-            padding: 40px 0;
+            padding: 60px;
             flex-grow: 1;
         }
     }
