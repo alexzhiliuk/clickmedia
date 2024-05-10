@@ -1605,7 +1605,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   height: 24px;
   background-color: #383838;
   -webkit-mask: url(/img/icon-unfold.svg) no-repeat 50% 50%;
-  mask: url(/img/icon-unfold.svg) no-repeat 50% 50%;
+  mask: url("../img/icon-unfold.svg") no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   transition: all 0.3s;
@@ -1615,8 +1615,8 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   background-color: rgba(255, 255, 255, 0.8);
 }
 .header__menu-item.has-drop .header__menu-link.active:after {
-  -webkit-mask: url(/img/icon-fold.svg) no-repeat 50% 50%;
-  mask: url(/img/icon-fold.svg) no-repeat 50% 50%;
+  -webkit-mask: url("../img/icon-fold.svg") no-repeat 50% 50%;
+  mask: url("../img/icon-fold.svg") no-repeat 50% 50%;
 }
 @media screen and (max-width: 1199.98px) {
   .header__menu-item:first-child {
