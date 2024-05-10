@@ -12,6 +12,7 @@
     &__img.image-card__img {
         height: 700px;
         width: 950px;
+        flex: unset;
 
         @media screen and (max-width: $breakpoint1200) {
             width: 100%;

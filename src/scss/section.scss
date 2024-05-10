@@ -334,11 +334,30 @@
         .image-card__img {
             margin-bottom: 0;
             height: 100%;
+            flex: 0 0 32%;
+            min-width: 250px;
         }
 
         .image-card__content {
-            padding: 60px;
+            padding: 30px 30px 30px 40px;
             flex-grow: 1;
+        }
+
+        &_reverse {
+            flex-direction: row-reverse;
+
+            @media screen and (max-width: $breakpoint1200) {
+                flex-direction: column;
+            }
+
+            .image-card__img {
+                flex: 0 0 32%;
+                min-width: 250px;
+            }
+
+            .image-card__content {
+                padding: 30px 40px 30px 30px;
+            }
         }
     }
 
@@ -347,6 +366,14 @@
 
         .image-card__content {
             align-items: center;
+        }
+    }
+
+    &_1_2 {
+        flex: 1 0 calc(50% - 20px / 2);
+
+        @media screen and (max-width: $breakpoint1200) {
+            flex: 0 0 100%;
         }
     }
 
