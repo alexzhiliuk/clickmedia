@@ -159,6 +159,10 @@
     // .banner__btn
     &__btn {
         min-width: 560px;
+
+        @media screen and (max-width: $breakpoint768) {
+            min-width: unset;
+        }
     }
 }
 

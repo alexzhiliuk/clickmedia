@@ -345,6 +345,7 @@
     padding: 10px 10px 40px;
     display: flex;
     flex-direction: column;
+    min-width: min(calc(100% - 40px), 350px);
 
     &_row {
         padding: 10px;

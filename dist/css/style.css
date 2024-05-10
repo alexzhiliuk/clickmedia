@@ -1029,6 +1029,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   padding: 10px 10px 40px;
   display: flex;
   flex-direction: column;
+  min-width: min(100% - 40px, 350px);
 }
 .image-card_row {
   padding: 10px;
@@ -1842,14 +1843,14 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   position: fixed;
   z-index: 9;
   left: 0;
-  top: 0;
+  top: 140px;
   width: 100%;
   padding: 30px;
-  height: 100%;
+  height: calc(100vh - 180px);
   border-radius: 32px;
   transition: 0.5s ease all;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(15px) brightness(1.1);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(30px) brightness(1.1);
   -webkit-backdrop-filter: blur(15px) brightness(1.1);
   box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -1859,6 +1860,8 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 @media screen and (max-width: 1599.98px) {
   .drop-menu {
+    top: 0;
+    height: 100%;
     gap: unset;
     flex-wrap: nowrap;
     overflow: scroll;
@@ -3529,6 +3532,11 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 .banner__btn {
   min-width: 560px;
+}
+@media screen and (max-width: 767.98px) {
+  .banner__btn {
+    min-width: unset;
+  }
 }
 
 .sectors {
