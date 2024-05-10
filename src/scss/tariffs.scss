@@ -1,0 +1,161 @@
+.tariff {
+
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+    min-height: 815px;
+    flex: 0 0 calc(33.33% - 20px * 2 / 3);
+
+    @media screen and (max-width: $breakpoint1200) and (min-width: $breakpoint768) {
+        flex: 0 0 100%;
+        flex-wrap: wrap;
+        flex-direction: row;
+        min-height: unset;
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: $breakpoint992) {
+        padding: 40px;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        flex: 0 0 100%;
+        min-height: unset;
+    }
+
+    &_blue {
+        background: $colorSecondary url("../img/tariffs/bg.svg") 70% 40% / 190% auto no-repeat;
+        position: relative;
+        overflow: hidden;
+
+        & * {
+            position: relative;
+            z-index: 1;
+        }
+
+        &::before {
+            content: 'ПОПУЛЯРНОЕ';
+            position: absolute;
+            right: -110px;
+            top: auto;
+            width: 350px;
+            padding: 14px;
+            background-color: $colorPrimary;
+            rotate: 45deg;
+
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 155%;
+            text-align: center;
+            text-transform: uppercase;
+            color: $white;
+            z-index: 0;
+
+
+        }
+
+        .tariff__title,
+        .tariff__subtitle,
+        .tariff__price,
+        .tariff__price span,
+        .tariff__item-text {
+            color: $white;
+        }
+
+        .tariff__subtitle {
+            opacity: .7;
+        }
+    }
+
+    // .tariff__title
+    &__title {
+        color: $black;
+        margin-bottom: 10px;
+    }
+
+    // .tariff__subtitle
+    &__subtitle {
+        color: $gray500;
+        margin-bottom: 40px;
+
+
+        @media screen and (max-width: $breakpoint1200) and (min-width: $breakpoint768) {
+            margin-bottom: 0;
+        }
+
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-bottom: 20px;
+        }
+    }
+
+    // .tariff__price
+    &__price {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 40px;
+
+
+        @media screen and (max-width: $breakpoint1200) and (min-width: $breakpoint768) {
+            margin-bottom: 0;
+        }
+        @media screen and (max-width: $breakpoint768) {
+            margin-bottom: 20px;
+        }
+
+        span {
+
+            font-family: $headersFont;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 155%;
+
+            color: $gray500;
+
+        }
+    }
+
+    // .tariff__items
+    &__items {
+        @extend .hero__items;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 60px;
+        margin-bottom: 40px;
+        margin-top: 0;
+        border-top: 1px solid $borderColor;
+
+        @media screen and (max-width: $breakpoint1200) and (min-width: $breakpoint768) {
+            flex: 0 0 100%;
+            margin-top: 40px;
+        }
+        @media screen and (max-width: $breakpoint768) {
+            padding-top: 30px;
+        }
+    }
+
+    // .tariff__item
+    &__item {
+        @extend .hero__item;
+    }
+
+    // .tariff__item-marker
+    &__item-marker {
+        @extend .hero__item-marker;
+    }
+
+    // .tariff__item-text
+    &__item-text {
+        @extend .hero__item-text;
+    }
+
+    // .tariff__btn
+    &__btn {
+        margin-top: auto;
+        max-width: 100%;
+    }
+}

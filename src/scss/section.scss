@@ -96,6 +96,14 @@
         display: flex;
         align-items: center;
         gap: 20px;
+
+        @media screen and (max-width: $breakpoint576) {
+            flex-direction: column;
+
+            .section__btn:not(:first-child) {
+                margin-top: 0;
+            }
+        }
     }
 
     &__btn {
@@ -256,6 +264,7 @@
             flex-wrap: nowrap;
             overflow: auto;
             overflow-y: hidden;
+
             .icon-card {
                 &:first-child {
                     margin-left: 20px;
@@ -263,9 +272,10 @@
                 &:last-child {
                     margin-right: 20px;
                 }
-                &_1_4 {
-                    min-width: 275px;
-                }
+                
+                min-width: 350px;
+                
+                
             }
         }
     }
@@ -300,18 +310,32 @@
         }
     }
 
+    &_1_3 {
+        flex-basis: calc(33.33% - 20px * 2 / 3);
+
+        @media screen and (max-width: $breakpoint1200) {
+
+        }
+    }
+
     &__icon {
         width: 50px;
         height: 50px;
+        margin-bottom: 30px;
 
         svg {
             width: 100%;
         }
     }
 
+    &__title {
+        margin-bottom: 20px;
+        color: $black;
+        word-break: break-all;
+    }
+
     &__text {
         color: $black;
-        margin-top: 30px;
     }
 }
 
@@ -336,6 +360,11 @@
             height: 100%;
             flex: 0 0 32%;
             min-width: 250px;
+
+            @media screen and (max-width: $breakpoint1200) {
+                height: 200px;
+                flex: unset
+            }
         }
 
         .image-card__content {
@@ -348,11 +377,6 @@
 
             @media screen and (max-width: $breakpoint1200) {
                 flex-direction: column;
-            }
-
-            .image-card__img {
-                flex: 0 0 32%;
-                min-width: 250px;
             }
 
             .image-card__content {
@@ -370,7 +394,7 @@
     }
 
     &_1_2 {
-        flex: 1 0 calc(50% - 20px / 2);
+        flex: 0 0 calc(50% - 20px / 2);
 
         @media screen and (max-width: $breakpoint1200) {
             flex: 0 0 100%;
@@ -424,6 +448,7 @@
     &__title {
         color: $black;
         margin-bottom: 14px;
+        word-break: break-word;
 
         span {
             color: $colorPrimary;
