@@ -7,7 +7,7 @@
         justify-content: space-between;
         gap: 20px;
 
-        @media screen and (max-width: $breakpoint576) {
+        @media screen and (max-width: $breakpoint768) {
             flex-direction: column;
             .tags {
                 width: 100%;
@@ -68,15 +68,16 @@
         }
 
         @media screen and (max-width: $breakpoint768) {
-            svg {
-                width: 26px;
-                height: 26px;
-            }
-            padding: 10px;
-        }
-        @media screen and (max-width: $breakpoint576) {
+            // svg {
+            //     width: 26px;
+            //     height: 26px;
+            // }
+            // padding: 10px;
             display: none;
         }
+        // @media screen and (max-width: $breakpoint576) {
+        //     display: none;
+        // }
 
         &.swiper-button-disabled {
             cursor: auto;

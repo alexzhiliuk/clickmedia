@@ -57,6 +57,12 @@
 
     &_white {
         background: $white;
+
+        &.tag_active {
+            background-color: $colorPrimary;
+            border-color: $colorPrimary;
+            color: $white;
+        }
     }
 
     &_sm {
