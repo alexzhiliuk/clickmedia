@@ -15,7 +15,8 @@
     }
 
     &_blue {
-        background: $colorSecondary url(../img/banner/bg.svg) 0 0  / auto auto no-repeat;
+        // background: $colorSecondary url(../img/banner/bg.svg) 0 0  / auto auto no-repeat;
+        background: $colorSecondary url(../img/blue-banner-bg.svg) -100px -190px  / auto auto no-repeat;
         color: $white;
 
         .banner__title {
@@ -24,6 +25,10 @@
 
         .banner__desc {
             color: #B9D4FB;
+        }
+
+        .banner__item-text {
+            color: $white;
         }
     }
 

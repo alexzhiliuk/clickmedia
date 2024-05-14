@@ -70,18 +70,11 @@
                 overflow-x: scroll;
                 overflow-y: hidden;
                 display: flex;
+                padding: 0 20px !important;
                 gap: 20px;
                 width: 100%;
                 &::-webkit-scrollbar {
                     display: none;
-                }
-
-                & > *:first-child {
-                    margin-left: 20px;
-                }
-
-                & > *:last-child {
-                    margin-right: 20px;
                 }
             }
         }
@@ -260,22 +253,14 @@
     &_mobile_slider {
         @media screen and (max-width: $breakpoint1200) {
             margin: 0 -20px;
+            padding: 0 20px;
             width: 100vw;
             flex-wrap: nowrap;
             overflow: auto;
             overflow-y: hidden;
 
             .icon-card {
-                &:first-child {
-                    margin-left: 20px;
-                }
-                &:last-child {
-                    margin-right: 20px;
-                }
-                
-                min-width: 350px;
-                
-                
+                min-width: 350px;                
             }
         }
     }
@@ -348,6 +333,7 @@
     min-width: min(calc(100% - 40px), 350px);
 
     &_row {
+        min-height: 280px;
         padding: 10px;
         display: flex;
         flex-direction: row;
@@ -371,6 +357,10 @@
         .image-card__content {
             padding: 30px 30px 30px 40px;
             flex-grow: 1;
+
+            @media screen and (max-width: $breakpoint1200) {
+                padding: 20px 10px;
+            }
         }
 
         &_reverse {
@@ -382,6 +372,10 @@
 
             .image-card__content {
                 padding: 30px 40px 30px 30px;
+
+                @media screen and (max-width: $breakpoint1200) {
+                    padding: 20px 10px;
+                }
             }
         }
     }
@@ -400,6 +394,10 @@
         @media screen and (max-width: $breakpoint1200) {
             flex: 0 0 100%;
         }
+    }
+
+    &_1_3 {
+
     }
 
     // .image-card__img
