@@ -1,0 +1,279 @@
+@mixin mb-40 {
+    &:not(:last-child) {
+        margin-bottom: 40px;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@mixin mb-30 {
+    &:not(:last-child) {
+        margin-bottom: 30px;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.text-section {
+    overflow: hidden;
+
+    & > * {
+        &:not(:last-child) {
+            margin-bottom: 100px;
+
+            @media screen and (max-width: $breakpoint768) {
+                margin-bottom: 60px;
+            }
+        }
+    }
+
+    h1, h2, h3, h4 {
+        color: $black;
+
+        @include mb-40;
+    }
+
+    p {
+        @extend .text-1;
+        @include mb-30;
+        color: $black;
+
+        @media screen and (max-width: $breakpoint992) {
+            font-size: 22px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 18px;
+        }
+    }
+
+    ul {
+        @extend .text-1;
+        color: $black;
+
+        list-style-type: disc;
+        list-style-position: inside;
+        padding: 0 60px;
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 18px;
+            padding: 0 10px;
+        }
+
+        @include mb-40;
+
+        li {
+            &::marker {
+                color: $colorPrimary;
+            }
+        }
+    }
+
+    ol {
+        @extend .text-1;
+        color: $black;
+
+        list-style-type: decimal;
+        list-style-position: inside;
+        padding: 0 60px;
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 18px;
+            padding: 0 10px;
+        }
+
+        @include mb-40;
+
+    }
+
+    blockquote {
+        @extend .card;
+
+        background: $colorSecondary url('../img/blockquote-bg.svg') 110% 80% / 129% auto no-repeat ;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        @media screen and (max-width: $breakpoint768) {
+            padding: 24px;
+            background: $colorSecondary url('../img/blockquote-bg.svg') 90% 80% / auto 280% no-repeat ;
+        }
+
+        @include mb-40;
+
+        svg {
+            margin-bottom: 60px;
+
+
+            @media screen and (max-width: $breakpoint768) {
+                margin-bottom: 30px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        p {
+            margin-bottom: 40px;
+            color: $white;
+
+            @media screen and (max-width: $breakpoint768) {
+                margin-bottom: 20px;
+            }
+            
+        }
+
+        footer {
+
+            font-family: $headersFont;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 115%;
+            letter-spacing: -0.01em;
+
+            color: $white;
+
+            @media screen and (max-width: $breakpoint768) {
+                font-size: 20px;
+            }
+
+        }
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+
+        border-collapse: collapse;
+        width: 100%;
+
+        @include mb-40;
+
+        &, td, th {
+            border: 1px solid $gray400;
+        }
+
+        td, th {
+            padding: 20px 30px;
+        }
+
+        th {
+            font-family: $textFont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 155%;
+            color: $black;
+            text-align: left;
+        }
+
+        td {
+            @extend .text-3;
+            color: $gray500;
+        }
+    }
+
+    .img-block {
+        @include mb-40;
+        overflow: hidden;
+
+        &__img {
+
+            max-width: min(860px, 60%);
+            aspect-ratio: 860 / 633;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+
+            @media screen and (max-width: $breakpoint768) {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+        
+        &__text {
+            &:not(:first-child) {
+                padding-top: 60px;
+
+                @media screen and (max-width: $breakpoint768) {
+                    padding-top: 20px;
+                }
+            }
+            &:first-child {
+                padding-bottom: 60px;
+
+                @media screen and (max-width: $breakpoint768) {
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    a {
+        &:not(.btn) {
+            color: $colorSecondary;
+            text-decoration: underline;
+        }
+    }
+
+    .btn {
+        @include mb-30;
+    }
+
+    form {
+        & > * {
+            &:not(:last-child) {
+                @include mb-30;
+            }
+        }
+    }
+
+    .form-inputs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        & > * {
+            flex: 1 0 calc(50% - 20px / 2);
+        }
+    }
+
+    .radio-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: 80px;
+        row-gap: 20px;
+
+        span {
+            font-family: $textFont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 165%;
+            letter-spacing: -0.01em;
+    
+            color: $black;
+    
+            margin-right: 80px;
+
+        }
+
+        label {
+            margin-right: 40px;
+        }
+    }
+}

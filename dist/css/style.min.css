@@ -433,6 +433,7 @@ button {
   justify-content: center;
   max-width: fit-content;
   width: 100%;
+  min-width: min(360px, 100%);
 }
 @media (hover: hover) {
   .btn:hover {
@@ -462,13 +463,17 @@ button {
 }
 .btn_sm {
   transition: background 120ms ease-out;
-  padding: 10px 20px;
+  padding: 14px 60px;
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: fit-content;
   width: 100%;
+}
+.btn_m {
+  padding: 10px 20px;
+  min-width: min(240px, 100%);
 }
 .btn_white {
   background-color: #FFF;
@@ -479,12 +484,32 @@ button {
     background-color: #f2f2f2;
   }
 }
+.btn_gray {
+  background-color: #DFE4EB;
+  color: #6E7985;
+}
+@media (hover: hover) {
+  .btn_gray:hover {
+    background-color: #cfd7e1;
+  }
+}
 .btn_blue {
   background-color: #1771F1;
 }
 @media (hover: hover) {
   .btn_blue:hover {
     background-color: #0e65e1;
+  }
+}
+.btn_blue.btn_outline {
+  border: 2px solid #1771F1;
+  color: #1771F1;
+  background-color: unset;
+}
+@media (hover: hover) {
+  .btn_blue.btn_outline:hover {
+    background-color: #1771F1;
+    color: #FFF;
   }
 }
 
@@ -516,6 +541,87 @@ input:not([type=submit])::placeholder {
   input:not([type=submit]) {
     padding: 12px 18px;
   }
+}
+
+.radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #383838;
+}
+.radio input {
+  flex-shrink: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: 2px solid #9FAEC2;
+  width: 30px;
+  height: 30px;
+}
+.radio input:checked {
+  accent-color: #FF6C22;
+}
+.radio input:checked ~ .checkmark {
+  opacity: 1;
+}
+.radio .checkmark {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #FF6C22;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #383838;
+  cursor: pointer;
+}
+.checkbox input {
+  flex-shrink: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 2px solid #9FAEC2;
+  cursor: pointer;
+}
+.checkbox input:checked {
+  accent-color: #FF6C22;
+}
+.checkbox input:checked ~ .checkmark {
+  opacity: 1;
+}
+.checkbox .checkmark {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  left: 0;
+  pointer-events: none;
+  width: 26px;
+  height: 26px;
+  background-color: #FF6C22;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
 }
 
 h1, .h1 {
@@ -611,7 +717,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 
-.text-1 {
+.text-1, .text-section ol, .text-section ul, .text-section p {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
@@ -638,7 +744,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 
-.text-3, .certificates-slide__text, .certificates-slide__title, .raiting-slide__list-item, .raiting-slide__body, .raiting-slide__date, .advantage__property-title, .footer__contacts-email, .footer__info-text, .footer__info-title {
+.text-3, .text-section table td, .certificates-slide__text, .certificates-slide__title, .raiting-slide__list-item, .raiting-slide__body, .raiting-slide__date, .advantage__property-title, .footer__contacts-email, .footer__info-text, .footer__info-title {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 20px;
@@ -646,7 +752,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   color: #6B7E99;
 }
 @media screen and (max-width: 991.98px) {
-  .text-3, .certificates-slide__text, .certificates-slide__title, .raiting-slide__list-item, .raiting-slide__body, .raiting-slide__date, .advantage__property-title, .footer__contacts-email, .footer__info-text, .footer__info-title {
+  .text-3, .text-section table td, .certificates-slide__text, .certificates-slide__title, .raiting-slide__list-item, .raiting-slide__body, .raiting-slide__date, .advantage__property-title, .footer__contacts-email, .footer__info-text, .footer__info-title {
     font-size: 18px;
   }
 }
@@ -677,7 +783,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   font-size: 22px;
   line-height: 150%;
   letter-spacing: -0.01em;
-  color: #6B7E99;
 }
 @media screen and (max-width: 1399.98px) {
   .desktop-list, .services-card__list-item, .commission-section__footer-item, .hero__item-text, .tariff__item-text, .banner__item-text {
@@ -710,6 +815,30 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 @media screen and (max-width: 767.98px) {
   .button-l, .btn {
     font-size: 18px;
+  }
+}
+
+.button-m, .btn_m {
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 145%;
+  letter-spacing: -0.01em;
+}
+@media screen and (max-width: 1199.98px) {
+  .button-m, .btn_m {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .button-m, .btn_m {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .button-m, .btn_m {
+    font-size: 16px;
   }
 }
 
@@ -816,6 +945,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 .section__body_slider > *::-webkit-scrollbar {
   display: none;
 }
+.section__body_slider > * > * {
+  min-width: 275px;
+}
 .section__body_m_0 {
   margin: 0;
 }
@@ -859,13 +991,13 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 
-.card, .image-card, .icon-card {
+.card, .text-section blockquote, .image-card, .icon-card {
   border-radius: 30px;
   background-color: #FFF;
   padding: 40px;
 }
 @media screen and (max-width: 767.98px) {
-  .card, .image-card, .icon-card {
+  .card, .text-section blockquote, .image-card, .icon-card {
     border-radius: 18px;
   }
 }
@@ -946,14 +1078,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   color: #FFF;
 }
 
-.icon-cards_slider .icon-card_1_6 {
-  min-width: max(275px, 16.6666666667% - 23.3333333333px);
-  flex-basis: calc(16.6666666667% - 23.3333333333px);
-}
-.icon-cards_slider .icon-card_1_5 {
-  min-width: max(275px, 20% - 24px);
-  flex-basis: calc(20% - 24px);
-}
 @media screen and (max-width: 1199.98px) {
   .icon-cards_mobile_slider {
     margin: 0 -20px;
@@ -3795,6 +3919,272 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 .tariff__btn {
   margin-top: auto;
   max-width: 100%;
+}
+
+.text-section {
+  overflow: hidden;
+}
+.text-section > *:not(:last-child) {
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section > *:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+.text-section h1, .text-section h2, .text-section h3, .text-section h4 {
+  color: #383838;
+}
+.text-section h1:not(:last-child), .text-section h2:not(:last-child), .text-section h3:not(:last-child), .text-section h4:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section h1:not(:last-child), .text-section h2:not(:last-child), .text-section h3:not(:last-child), .text-section h4:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.text-section p {
+  color: #383838;
+}
+.text-section p:not(:last-child) {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section p:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .text-section p {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .text-section p {
+    font-size: 18px;
+  }
+}
+.text-section ul {
+  color: #383838;
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 0 60px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section ul {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+}
+.text-section ul:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section ul:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.text-section ul li::marker {
+  color: #FF6C22;
+}
+.text-section ol {
+  color: #383838;
+  list-style-type: decimal;
+  list-style-position: inside;
+  padding: 0 60px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section ol {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+}
+.text-section ol:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section ol:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.text-section blockquote {
+  background: #1771F1 url("../img/blockquote-bg.svg") 110% 80%/129% auto no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section blockquote {
+    padding: 24px;
+    background: #1771F1 url("../img/blockquote-bg.svg") 90% 80%/auto 280% no-repeat;
+  }
+}
+.text-section blockquote:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section blockquote:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.text-section blockquote svg {
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section blockquote svg {
+    margin-bottom: 30px;
+    width: 50px;
+    height: 50px;
+  }
+}
+.text-section blockquote p {
+  margin-bottom: 40px;
+  color: #FFF;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section blockquote p {
+    margin-bottom: 20px;
+  }
+}
+.text-section blockquote footer {
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 115%;
+  letter-spacing: -0.01em;
+  color: #FFF;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section blockquote footer {
+    font-size: 20px;
+  }
+}
+.text-section .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+.text-section table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.text-section table:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section table:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.text-section table, .text-section table td, .text-section table th {
+  border: 1px solid #9FAEC2;
+}
+.text-section table td, .text-section table th {
+  padding: 20px 30px;
+}
+.text-section table th {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 155%;
+  color: #383838;
+  text-align: left;
+}
+.text-section table td {
+  color: #6B7E99;
+}
+.text-section .img-block {
+  overflow: hidden;
+}
+.text-section .img-block:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section .img-block:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.text-section .img-block__img {
+  max-width: min(860px, 60%);
+  aspect-ratio: 860/633;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section .img-block__img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.text-section .img-block__img img {
+  width: 100%;
+}
+.text-section .img-block__text:not(:first-child) {
+  padding-top: 60px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section .img-block__text:not(:first-child) {
+    padding-top: 20px;
+  }
+}
+.text-section .img-block__text:first-child {
+  padding-bottom: 60px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section .img-block__text:first-child {
+    padding-bottom: 20px;
+  }
+}
+.text-section a:not(.btn) {
+  color: #1771F1;
+  text-decoration: underline;
+}
+.text-section .btn:not(:last-child) {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section .btn:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+.text-section form > *:not(:last-child):not(:last-child) {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 767.98px) {
+  .text-section form > *:not(:last-child):not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+.text-section .form-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.text-section .form-inputs > * {
+  flex: 1 0 calc(50% - 10px);
+}
+.text-section .radio-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 80px;
+  row-gap: 20px;
+}
+.text-section .radio-wrapper span {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 165%;
+  letter-spacing: -0.01em;
+  color: #383838;
+  margin-right: 80px;
+}
+.text-section .radio-wrapper label {
+  margin-right: 40px;
 }
 
 @font-face {

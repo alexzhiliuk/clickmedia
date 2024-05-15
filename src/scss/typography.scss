@@ -182,8 +182,6 @@ h4, .h4 {
 
     letter-spacing: -0.01em;
 
-    color: $gray500;
-
 
     @media screen and (max-width: $breakpoint1400) {
         font-size: 18px;
@@ -213,6 +211,29 @@ h4, .h4 {
     @media screen and (max-width: $breakpoint768) {
         font-size: 18px;
     }
+}
+
+.button-m {
+
+    font-family: $headersFont;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 145%;
+    letter-spacing: -0.01em;
+
+    @media screen and (max-width: $breakpoint1200) {
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: $breakpoint992) {
+        font-size: 28px;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        font-size: 16px;
+    }
+
 }
 
 .button-s {
