@@ -1542,10 +1542,10 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   max-width: 2000px;
   transition: 0.3s ease all;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .header {
-    width: calc(100% - 40px);
     top: 10px;
+    width: calc(100% - 40px);
   }
 }
 .header_scrolled {
@@ -1564,7 +1564,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   align-items: center;
   gap: 20px;
   padding: 30px;
-  height: 120px;
+  height: 100px;
   margin: 0 -30px;
   border-radius: 32px;
   transition: 0.5s ease all;
@@ -1575,6 +1575,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
     backdrop-filter: blur(15px) brightness(1.1);
     -webkit-backdrop-filter: blur(15px) brightness(1.1);
     box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    height: 90px;
+    margin: 0 -10px;
   }
   .header__nav .header__check:hover {
     background-color: rgba(23, 113, 241, 0.1);
@@ -1588,11 +1591,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
   .header__nav .header__phone-link:hover {
     background-color: rgba(23, 113, 241, 0.1);
-  }
-}
-@media screen and (max-width: 575.98px) {
-  .header__nav {
-    margin: 0 -10px;
   }
 }
 .header__nav_bg, .header__nav.header__nav_active {
@@ -1647,12 +1645,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 .header__nav.header__nav_active .header__burger, .header__nav.header__nav_active .modal__close {
   order: 2;
 }
-@media screen and (max-width: 767.98px) {
-  .header__nav {
-    border-radius: 16px;
-    height: 90px;
-  }
-}
 .header__logo {
   flex: 0 1 250px;
 }
@@ -1689,14 +1681,14 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
     display: flex;
     position: fixed;
     z-index: 9;
-    left: 0;
+    left: 20px;
     top: 140px;
-    width: 100%;
+    right: 20px;
     padding: 30px;
-    height: calc(100dvh - 180px);
+    height: calc(100dvh - 160px);
     border-radius: 32px;
     transition: 0.5s ease all;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(15px) brightness(1.1);
     -webkit-backdrop-filter: blur(15px) brightness(1.1);
     box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
@@ -1708,15 +1700,10 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 @media screen and (max-width: 767.98px) {
   .header__menu_active {
     border-radius: 16px;
-    left: 0;
+    left: 10px;
+    right: 10px;
     top: 110px;
     padding: 10px;
-    height: calc(100dvh - 150px);
-  }
-}
-@media screen and (max-width: 575.98px) {
-  .header__menu_active {
-    top: 100px;
     height: calc(100dvh - 120px);
   }
 }
@@ -1740,9 +1727,17 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   -webkit-mask: url("../img/icon-fold.svg") no-repeat 50% 50%;
   mask: url("../img/icon-fold.svg") no-repeat 50% 50%;
 }
-@media screen and (max-width: 1199.98px) {
-  .header__menu-item:first-child {
+@media screen and (max-width: 1599.98px) {
+  .header__menu-item:first-of-type {
     margin-top: auto;
+  }
+  .header__menu-item:last-of-type {
+    margin-bottom: auto;
+  }
+}
+@media screen and (max-width: 1199.98px) {
+  .header__menu-item:last-of-type {
+    margin-bottom: unset;
   }
 }
 .header__menu-link {
@@ -1966,9 +1961,10 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   z-index: 9;
   left: 0;
   top: 140px;
-  width: 100%;
+  left: 20px;
+  right: 20px;
   padding: 30px;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 160px);
   border-radius: 32px;
   transition: 0.5s ease all;
   background: rgba(255, 255, 255, 0.9);
@@ -1982,8 +1978,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 @media screen and (max-width: 1599.98px) {
   .drop-menu {
-    top: 0;
-    height: 100%;
     gap: unset;
     flex-wrap: nowrap;
     overflow: scroll;
@@ -1995,12 +1989,11 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 @media screen and (max-width: 767.98px) {
   .drop-menu {
     border-radius: 16px;
-    padding: 30px 20px;
-  }
-}
-@media screen and (max-width: 575.98px) {
-  .drop-menu {
     padding: 30px 10px;
+    left: 10px;
+    right: 10px;
+    top: 110px;
+    height: calc(100vh - 120px);
   }
 }
 .drop-menu__header {

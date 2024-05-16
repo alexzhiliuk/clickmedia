@@ -1,5 +1,19 @@
 let contactInMobileMenu = false
 function moveMobileMenu() {
+    if (window.outerWidth >= 1600 && $(".header__burger").hasClass("header__burger_active")) {
+        let $menu = $(".header__menu"),
+            $dropMenu = $(".drop-menu")
+
+            $(".header__burger").removeClass("header__burger_active")
+        
+        $menu.removeClass("header__menu_active")
+        $menu.insertAfter(".header__logo")
+
+        $dropMenu.hide()
+        $dropMenu.appendTo(".header__menu")
+
+        $(".header__menu-link").removeClass("active")
+    }
     if (window.outerWidth < 1200 && !contactInMobileMenu) {
         $(".header__contact").appendTo(".header__menu")
         $(".header__contact").replaceWith('<li class="header__contact">' + $(".header__contact").html() +'</li>')
@@ -12,6 +26,7 @@ function moveMobileMenu() {
         contactInMobileMenu = false
         return
     }
+
 }
 moveMobileMenu()
 $(window).on("resize", function() {
@@ -20,25 +35,21 @@ $(window).on("resize", function() {
 
 $(".header__burger").click(function() {
     $(this).toggleClass("header__burger_active")
-    let {top, left} = $(this).position(),
-        wrapper = $(".header__wrapper"),
-        menu = $(".header__menu"),
+    let $menu = $(".header__menu"),
         contact = $(".header__contact")
     
     if ($(this).hasClass("header__burger_active")) {
-        wrapper.parent().css("padding", "0").css("top", "0")
-        wrapper.addClass("header__wrapper_active")
-        menu.addClass("header__menu_active")
+        $menu.addClass("header__menu_active")
+        $menu.appendTo("body")
         contact.addClass("header__contact_active")
     } else {
-        wrapper.parent().css("padding", "").css("top", "")
-        wrapper.removeClass("header__wrapper_active")
-        menu.removeClass("header__menu_active")
+        $menu.removeClass("header__menu_active")
+        $menu.insertAfter(".header__logo")
         contact.removeClass("header__contact_active")
         $('.drop-menu').hide();
         $(".header__menu").css("overflow", "")
+        $(".header__menu-link").removeClass("active")
     }
-
 
     $("body, html").toggleClass("lock")
 
@@ -63,7 +74,11 @@ $(window).scroll(function(event){
 
 $('#services-show').click(function() {
     $(this).toggleClass('active');
-    $('.drop-menu').show();
+
+    let $dropMenu = $('.drop-menu');
+    $dropMenu.appendTo("body")
+    $dropMenu.show()
+
     $(".header__menu").css("overflow", "hidden")
 
     if (window.outerWidth >= 1600) {
@@ -76,7 +91,10 @@ $('#services-show').click(function() {
 
 $('#services-hide').click(function() {
     $('#services-show').removeClass('active');
-    $(this).parents(".drop-menu").hide()
+    let $dropMenu = $(this).parents(".drop-menu")
+    $dropMenu.hide()
+    $dropMenu.appendTo(".header__menu")
+    
     $(".header__menu").css("overflow", "")
     $('body, html').removeClass("lock");
 });
@@ -85,7 +103,11 @@ $('#services-nav').click(function() {
     let showValue = $(this).attr("data-show")
     if (showValue == "main-menu") {
         $('#services-show').removeClass('active');
-        $(this).parents(".drop-menu").hide()
+        
+        let $dropMenu = $(this).parents(".drop-menu")
+        $dropMenu.hide()
+        $dropMenu.appendTo(".header__menu")
+        
         $(".header__menu").css("overflow", "")
         return
     }

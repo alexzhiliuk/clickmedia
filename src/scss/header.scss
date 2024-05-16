@@ -32,9 +32,9 @@
     max-width: $conteinerWidth;
     transition: .3s ease all;
 
-    @media screen and (max-width: $breakpoint576) {
-        width: calc(100% - 2 * 20px);
+    @media screen and (max-width: $breakpoint768) {
         top: 10px;
+        width: calc(100% - 2 * 20px);
     }
 
     &_scrolled {
@@ -56,16 +56,15 @@
         align-items: center;
         gap: 20px;
         padding: 30px;
-        height: 120px;
+        height: 100px;
         margin: 0 -30px;
         border-radius: 32px;
         transition: .5s ease all;
 
         @media screen and (max-width: $breakpoint768) {
             @include header-bg;
-        }
-
-        @media screen and (max-width: $breakpoint576) {
+            border-radius: 16px;
+            height: 90px;
             margin: 0 -10px;
         }
 
@@ -109,11 +108,6 @@
             }
         }
 
-        @media screen and (max-width: $breakpoint768) {
-            border-radius: 16px;
-            height: 90px;
-        }
-
     }
 
     // .header__logo
@@ -153,14 +147,14 @@
                 display: flex;
                 position: fixed;
                 z-index: 9;
-                left: 0;
+                left: 20px;
                 top: 140px;
-                width: 100%;
+                right: 20px;
                 padding: 30px;
-                height: calc(100dvh - 180px);
+                height: calc(100dvh - 160px);
                 border-radius: 32px;
                 transition: 0.5s ease all;
-                background: rgba(255, 255, 255, 0.95);
+                background: rgba(255, 255, 255, 0.5);
                 backdrop-filter: blur(15px) brightness(1.1);
                 -webkit-backdrop-filter: blur(15px) brightness(1.1);
                 box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
@@ -174,16 +168,10 @@
         @media screen and (max-width: $breakpoint768) {
             &_active {
                 border-radius: 16px;
-                left: 0;
+                left: 10px;
+                right: 10px;
                 top: 110px;
                 padding: 10px;
-                height: calc(100dvh - 150px);
-            }
-        }
-
-        @media screen and (max-width: $breakpoint576) {
-            &_active {
-                top: 100px;
                 height: calc(100dvh - 120px);
             }
         }
@@ -222,9 +210,18 @@
 
         }
 
-        @media screen and (max-width: $breakpoint1200) {
-            &:first-child {
+        @media screen and (max-width: $breakpoint1600) {
+            &:first-of-type {
                 margin-top: auto;
+            }
+            &:last-of-type {
+                margin-bottom: auto;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint1200) {
+            &:last-of-type {
+                margin-bottom: unset;
             }
         }
 
@@ -495,9 +492,10 @@
     z-index: 9;
     left: 0;
     top: 140px;
-    width: 100%;
+    left: 20px;
+    right: 20px;
     padding: 30px;
-    height: calc(100vh - 180px);
+    height: calc(100vh - 160px);
     border-radius: 32px;
     transition: 0.5s ease all;
     background: rgba(255, 255, 255, 0.9);
@@ -511,8 +509,6 @@
     gap: 60px;
 
     @media screen and (max-width: $breakpoint1600) {
-        top: 0;
-        height: 100%;
         gap: unset;
         flex-wrap: nowrap;
         overflow: scroll;
@@ -524,18 +520,11 @@
 
     @media screen and (max-width: $breakpoint768) {
         border-radius: 16px;
-        padding: 30px 20px;
-        // height: calc(100dvh - 150px);
-        // top: 130px;
-    }
-
-    @media screen and (max-width: $breakpoint576) {
-        // top: 110px;
-        // left: 10px;
         padding: 30px 10px;
-        // width: calc(100dvw - 20px);
-        // height: calc(100dvh - 120px);
-        
+        left: 10px;
+        right: 10px;
+        top: 110px;
+        height: calc(100vh - 120px);
     }
 
     &__header {
