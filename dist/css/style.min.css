@@ -991,13 +991,13 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 
-.card, .text-section blockquote, .image-card, .icon-card {
+.card, .modal, .text-section blockquote, .image-card, .icon-card {
   border-radius: 30px;
   background-color: #FFF;
   padding: 40px;
 }
 @media screen and (max-width: 767.98px) {
-  .card, .text-section blockquote, .image-card, .icon-card {
+  .card, .modal, .text-section blockquote, .image-card, .icon-card {
     border-radius: 18px;
   }
 }
@@ -1644,7 +1644,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   order: 4;
   flex: 0 0 100%;
 }
-.header__nav.header__nav_active .header__burger {
+.header__nav.header__nav_active .header__burger, .header__nav.header__nav_active .modal__close {
   order: 2;
 }
 @media screen and (max-width: 767.98px) {
@@ -1892,7 +1892,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   background-color: rgba(255, 255, 255, 0.8);
   color: #FF6C22;
 }
-.header__burger {
+.header__burger, .modal__close {
   display: none;
   position: relative;
   z-index: 10;
@@ -1904,43 +1904,44 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.8);
 }
-.header__burger.header__burger_active span {
-  opacity: 0;
-}
-.header__burger.header__burger_active::before {
-  rotate: 45deg;
-  top: 50%;
-  translate: 0 -50%;
-}
-.header__burger.header__burger_active::after {
-  rotate: -45deg;
-  bottom: 50%;
-  translate: 0 50%;
-}
-.header__burger::before, .header__burger::after,
-.header__burger span {
+.header__burger::before, .modal__close::before, .header__burger::after, .modal__close::after,
+.header__burger span,
+.modal__close span {
   width: 100%;
   height: 2px;
   background-color: #383838;
   border-radius: 1px;
   transition: 0.2s ease all;
 }
-.header__burger::before {
+.header__burger::before, .modal__close::before {
   content: "";
   position: absolute;
   left: 10px;
   top: 14px;
   width: calc(100% - 20px);
 }
-.header__burger::after {
+.header__burger::after, .modal__close::after {
   content: "";
   position: absolute;
   left: 10px;
   bottom: 14px;
   width: calc(100% - 20px);
 }
+.header__burger_active span, .modal__close span {
+  opacity: 0;
+}
+.header__burger_active::before, .modal__close::before {
+  rotate: 45deg;
+  top: 50%;
+  translate: 0 -50%;
+}
+.header__burger_active::after, .modal__close::after {
+  rotate: -45deg;
+  bottom: 50%;
+  translate: 0 50%;
+}
 @media screen and (max-width: 1599.98px) {
-  .header__burger {
+  .header__burger, .modal__close {
     display: flex;
     align-items: center;
   }
@@ -4153,11 +4154,6 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 .text-section form > *:not(:last-child):not(:last-child) {
   margin-bottom: 30px;
 }
-@media screen and (max-width: 767.98px) {
-  .text-section form > *:not(:last-child):not(:last-child) {
-    margin-bottom: 10px;
-  }
-}
 .text-section .form-inputs {
   display: flex;
   flex-wrap: wrap;
@@ -4165,6 +4161,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 .text-section .form-inputs > * {
   flex: 1 0 calc(50% - 10px);
+  max-width: 100%;
 }
 .text-section .radio-wrapper {
   display: flex;
@@ -4185,6 +4182,54 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 .text-section .radio-wrapper label {
   margin-right: 40px;
+}
+
+.modal-wrapper {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.modal {
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+}
+.modal__title {
+  margin-bottom: 40px;
+  color: #383838;
+}
+@media screen and (max-width: 767.98px) {
+  .modal__title {
+    max-width: 80%;
+  }
+}
+.modal__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.modal__confirm {
+  margin-bottom: 24px;
+}
+.modal__close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .modal__close {
+    right: 20px;
+  }
 }
 
 @font-face {

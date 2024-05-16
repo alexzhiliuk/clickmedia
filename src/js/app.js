@@ -5,6 +5,7 @@ import * as raiting from './modules/raiting.js';
 import * as certificates from './modules/certificates.js';
 import * as cases from './modules/cases.js';
 import * as tabs from './modules/tabs.js';
+import * as modal from './modules/modal.js';
 
 
 
@@ -17,13 +18,15 @@ for (let panel of $(".top-panel__item")) {
     sectionsOffset[sectionId] = $(`#${sectionId}`).offset().top
 }
 
-$(window).on("scroll", function() {
-
-    let scrollTop = $(window).scrollTop()
-    for (let sectionId in sectionsOffset) {
-        if (scrollTop > sectionsOffset[sectionId] - 200 && scrollTop < sectionsOffset[sectionId] + 200) {
-            $(".top-panel__item").removeClass("top-panel__item_active")
-            $(`#for-${sectionId}`).addClass("top-panel__item_active")
+if (Object.keys(sectionsOffset).length > 0) {
+    $(window).on("scroll", function() {
+    
+        let scrollTop = $(window).scrollTop()
+        for (let sectionId in sectionsOffset) {
+            if (scrollTop > sectionsOffset[sectionId] - 200 && scrollTop < sectionsOffset[sectionId] + 200) {
+                $(".top-panel__item").removeClass("top-panel__item_active")
+                $(`#for-${sectionId}`).addClass("top-panel__item_active")
+            }
         }
-    }
-})
+    })
+}

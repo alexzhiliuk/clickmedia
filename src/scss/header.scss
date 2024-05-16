@@ -420,25 +420,6 @@
         border-radius: 16px;
         background-color: rgba(255, 255, 255, 0.8);
 
-        // .header__burger_active
-        &.header__burger_active {
-            span {
-                opacity: 0;
-            }
-
-            &::before {
-                rotate: 45deg;
-                top: 50%;
-                translate: 0 -50%;
-            }
-
-            &::after {
-                rotate: -45deg;
-                bottom: 50%;
-                translate: 0 50%;
-            }
-        }
-
         &::before,
         &::after,
         span {
@@ -467,6 +448,25 @@
 
         span {
 
+        }
+
+        // .header__burger_active
+        &_active {
+            span {
+                opacity: 0;
+            }
+
+            &::before {
+                rotate: 45deg;
+                top: 50%;
+                translate: 0 -50%;
+            }
+
+            &::after {
+                rotate: -45deg;
+                bottom: 50%;
+                translate: 0 50%;
+            }
         }
 
         @media screen and (max-width: $burgerBreakpoint) {
