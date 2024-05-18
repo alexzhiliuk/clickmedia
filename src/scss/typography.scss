@@ -93,6 +93,16 @@ h4, .h4 {
 
 }
 
+h5, .h5 {
+
+    font-family: $headersFont;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 115%;
+
+}
+
 .text-1 {
 
     font-family: 'Montserrat';
@@ -250,4 +260,22 @@ h4, .h4 {
     @media screen and (max-width: $breakpoint768) {
         font-size: 16px;
     }
+}
+
+@mixin desktop-case-numbers-s {
+        
+    font-family: $headersFont;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 115%;
+    letter-spacing: -0.01em;
+}
+
+@mixin desktop-figcaption {
+    font-family: $textFont;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 160%;
 }

@@ -6,6 +6,7 @@ import * as certificates from './modules/certificates.js';
 import * as cases from './modules/cases.js';
 import * as tabs from './modules/tabs.js';
 import * as modal from './modules/modal.js';
+import * as caseSlider from './modules/caseSlider.js';
 
 
 

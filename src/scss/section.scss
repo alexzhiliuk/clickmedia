@@ -236,6 +236,10 @@
         }
     }
 
+    &_gray {
+        background-color: #F1F4F9;
+    }
+
 }
 
 .icon-cards {
@@ -462,5 +466,52 @@
     // .image-card__btn
     &__btn {
         margin-top: auto;
+    }
+}
+
+.num-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    & > * {
+        flex: 0 0 calc(33.33% - 20px * 2 / 3);
+
+
+        @media screen and (max-width: $breakpoint992) {
+            flex: 0 0 calc(50% - 20px * 1 / 2);
+        }
+        
+        @media screen and (max-width: $breakpoint768) {
+            flex: 0 0 100%;
+        }
+    }
+}
+
+.num-card {
+    @extend .card;
+
+    &__num {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: $colorSecondary;
+        margin-bottom: 60px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include desktop-case-numbers-s;
+        color: $white;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        color: $black;
+        word-break: break-word;
     }
 }

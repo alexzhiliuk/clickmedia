@@ -717,6 +717,14 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 
+h5, .h5 {
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 115%;
+}
+
 .text-1, .text-section ol, .text-section ul, .text-section p {
   font-family: "Montserrat";
   font-style: normal;
@@ -744,7 +752,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 
-.text-3, .text-section table td, .certificates-slide__text, .certificates-slide__title, .raiting-slide__list-item, .raiting-slide__body, .raiting-slide__date, .advantage__property-title, .footer__contacts-email, .footer__info-text, .footer__info-title {
+.text-3, .case-item__content ol, .case-item__content ul, .case-item__content p, .text-section table td, .certificates-slide__text, .certificates-slide__title, .raiting-slide__list-item, .raiting-slide__body, .raiting-slide__date, .advantage__property-title, .footer__contacts-email, .footer__info-text, .footer__info-title {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 20px;
@@ -752,7 +760,7 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   color: #6B7E99;
 }
 @media screen and (max-width: 991.98px) {
-  .text-3, .text-section table td, .certificates-slide__text, .certificates-slide__title, .raiting-slide__list-item, .raiting-slide__body, .raiting-slide__date, .advantage__property-title, .footer__contacts-email, .footer__info-text, .footer__info-title {
+  .text-3, .case-item__content ol, .case-item__content ul, .case-item__content p, .text-section table td, .certificates-slide__text, .certificates-slide__title, .raiting-slide__list-item, .raiting-slide__body, .raiting-slide__date, .advantage__property-title, .footer__contacts-email, .footer__info-text, .footer__info-title {
     font-size: 18px;
   }
 }
@@ -991,13 +999,13 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
   }
 }
 
-.card, .modal, .text-section blockquote, .image-card, .icon-card {
+.card, .modal, .text-section blockquote, .num-card, .image-card, .icon-card {
   border-radius: 30px;
   background-color: #FFF;
   padding: 40px;
 }
 @media screen and (max-width: 767.98px) {
-  .card, .modal, .text-section blockquote, .image-card, .icon-card {
+  .card, .modal, .text-section blockquote, .num-card, .image-card, .icon-card {
     border-radius: 18px;
   }
 }
@@ -1076,6 +1084,9 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 .card_blue .card__title {
   color: #FFF;
+}
+.card_gray {
+  background-color: #F1F4F9;
 }
 
 @media screen and (max-width: 1199.98px) {
@@ -1265,6 +1276,52 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 }
 .image-card__btn {
   margin-top: auto;
+}
+
+.num-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.num-cards > * {
+  flex: 0 0 calc(33.33% - 13.3333333333px);
+}
+@media screen and (max-width: 991.98px) {
+  .num-cards > * {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .num-cards > * {
+    flex: 0 0 100%;
+  }
+}
+
+.num-card__num {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #1771F1;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 115%;
+  letter-spacing: -0.01em;
+  color: #FFF;
+}
+@media screen and (max-width: 767.98px) {
+  .num-card__num {
+    margin-bottom: 30px;
+  }
+}
+.num-card__title {
+  color: #383838;
+  word-break: break-word;
 }
 
 .slider-section__title-wrapper {
@@ -4222,6 +4279,340 @@ h4, .h4, .cta__avatar-caption, .raiting-banner__title, .raiting-slide__title {
 @media screen and (max-width: 767.98px) {
   .modal__close {
     right: 20px;
+  }
+}
+
+.case-item {
+  display: flex;
+  overflow: clip;
+  gap: 20px;
+}
+@media screen and (max-width: 991.98px) {
+  .case-item {
+    flex-direction: column;
+  }
+}
+.case-item__type {
+  flex: 0 1 435px;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+@media screen and (max-width: 991.98px) {
+  .case-item__type {
+    flex: unset;
+    position: static;
+  }
+}
+.case-item__type span {
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 115%;
+  color: #6B7E99;
+}
+.case-item__content {
+  max-width: 1365px;
+}
+.case-item__content > *:not(:last-child) {
+  margin-bottom: 40px;
+}
+.case-item__content p {
+  color: #383838;
+}
+.case-item__content ul {
+  color: #383838;
+  list-style-type: disc;
+  margin-left: 1em;
+  padding: 0 60px;
+}
+@media screen and (max-width: 767.98px) {
+  .case-item__content ul {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+}
+.case-item__content ul li::marker {
+  color: #FF6C22;
+}
+.case-item__content ol {
+  color: #383838;
+  list-style-type: decimal;
+  margin-left: 1em;
+  padding: 0 60px;
+}
+@media screen and (max-width: 767.98px) {
+  .case-item__content ol {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+}
+.case-item__content-footer_border {
+  padding-top: 60px;
+  border-top: 1px solid #DAE3F0;
+}
+.case-item__img img {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-height: 850px;
+  aspect-ratio: 1345/850;
+  object-fit: cover;
+}
+.case-item__img figcaption {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 160%;
+  color: #6B7E99;
+  margin-top: 10px;
+}
+.case-item__slider {
+  width: 100%;
+}
+.case-item__slider .swiper-slide {
+  max-width: fit-content !important;
+}
+.case-item__slider .swiper-pagination-bullet {
+  display: flex;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #DAE3F0;
+}
+.case-item__slider .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #FF6C22;
+}
+.case-item__slider-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+.case-item__slider-img:not(:last-child) {
+  margin-right: 20px;
+}
+.case-item__slider-img img {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  max-height: min(550px, 45vw);
+  min-height: 300px;
+  max-width: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+.case-item__slider-img figcaption {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 160%;
+  color: #6B7E99;
+  margin-top: 10px;
+}
+
+.metrics-charts {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media screen and (max-width: 767.98px) {
+  .metrics-charts {
+    justify-content: center;
+  }
+}
+.metrics-charts > * {
+  flex: 0 1 230px;
+  min-width: fit-content;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+.metric-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.metric-chart__circles {
+  position: relative;
+  width: 150px;
+  aspect-ratio: 1;
+}
+.metric-chart__circles::before {
+  content: attr(data-value);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 115%;
+  letter-spacing: -0.01em;
+  color: #383838;
+}
+.metric-chart__circle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+.metric-chart__circle path {
+  stroke: #F1F4F9;
+  fill: none;
+  stroke-width: 2.8;
+}
+.metric-chart__circle_value {
+  z-index: 1;
+}
+.metric-chart__circle_value path {
+  stroke: #6B7E99;
+  animation: progress 1s ease-out forwards;
+}
+.metric-chart__name {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: #383838;
+  margin-top: 20px;
+}
+
+.meta-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.meta-wrapper > * {
+  flex: 0 1 435px;
+  gap: 10px;
+  min-width: fit-content;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  height: 72px;
+}
+@media screen and (max-width: 575.98px) {
+  .meta {
+    height: unset;
+  }
+}
+.meta svg {
+  margin-right: 20px;
+}
+@media screen and (max-width: 575.98px) {
+  .meta svg {
+    margin-bottom: 10px;
+    margin-right: unset;
+  }
+}
+.meta__title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  color: #6B7E99;
+}
+.meta__value {
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 115%;
+  letter-spacing: -0.01em;
+  color: #383838;
+}
+
+.before-after-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.before-after {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (max-width: 767.98px) {
+  .before-after {
+    flex-wrap: wrap;
+  }
+}
+.before-after > * {
+  flex: 0 0 calc(50% - 10px);
+}
+@media screen and (max-width: 767.98px) {
+  .before-after > * {
+    flex: 0 0 100%;
+  }
+}
+.before-after__before {
+  background-color: #EDF5FF;
+  position: relative;
+}
+.before-after__before .before-after__title,
+.before-after__before .before-after__text {
+  color: #383838;
+}
+.before-after__before::before {
+  content: url(../img/before-after/arrow.svg);
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  translate: calc(-50% + 10px) -50%;
+}
+@media screen and (max-width: 767.98px) {
+  .before-after__before::before {
+    top: 100%;
+    left: 50%;
+    translate: -50% calc(-50% + 10px);
+    rotate: 90deg;
+  }
+}
+.before-after__after .before-after__title {
+  color: #FFF;
+}
+.before-after__after .before-after__text {
+  color: #B9D4FB;
+}
+.before-after__title {
+  font-family: "HalvarBreit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 115%;
+  letter-spacing: -0.01em;
+}
+@media screen and (max-width: 479.98px) {
+  .before-after__text {
+    word-break: break-word;
   }
 }
 
