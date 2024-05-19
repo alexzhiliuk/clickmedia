@@ -272,6 +272,16 @@ h5, .h5 {
     letter-spacing: -0.01em;
 }
 
+@mixin desktop-case-numbers-m {
+        
+    font-family: $headersFont;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 115%;
+    letter-spacing: -0.01em;
+}
+
 @mixin desktop-figcaption {
     font-family: $textFont;
     font-style: normal;

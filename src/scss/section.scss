@@ -240,6 +240,10 @@
         background-color: #F1F4F9;
     }
 
+    &_gray300 {
+        background-color: $gray300;
+    }
+
 }
 
 .icon-cards {
@@ -515,3 +519,45 @@
         word-break: break-word;
     }
 }
+
+.value-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    & > * {
+        flex: 1 0 calc(33.33% - 20px * 2 / 3);
+
+
+        @media screen and (max-width: $breakpoint992) {
+            flex: 1 0 calc(50% - 20px * 1 / 2);
+        }
+        
+        @media screen and (max-width: $breakpoint768) {
+            flex: 0 0 100%;
+        }
+    }
+}
+
+.value-card {
+
+    @extend .card;
+
+    // .value-card__title
+    &__title {
+        @include desktop-case-numbers-m;
+        color: $black;
+        margin-bottom: 10px;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+    }
+
+    // .value-card__text
+    &__text {
+        color: $black;
+    }
+}
+
