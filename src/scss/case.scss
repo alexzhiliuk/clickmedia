@@ -3,6 +3,10 @@
     overflow: clip;
     gap: 20px;
 
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
     @media screen and (max-width: $breakpoint992) {
         flex-direction: column;
     }

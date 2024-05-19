@@ -4328,6 +4328,9 @@ h5, .h5 {
   overflow: clip;
   gap: 20px;
 }
+.case-item:not(:last-child) {
+  margin-bottom: 20px;
+}
 @media screen and (max-width: 991.98px) {
   .case-item {
     flex-direction: column;
