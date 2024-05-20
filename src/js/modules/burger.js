@@ -74,12 +74,19 @@ $(window).scroll(function(event){
 
 $('#services-show').click(function() {
     $(this).toggleClass('active');
-
     let $dropMenu = $('.drop-menu');
-    $dropMenu.appendTo("body")
-    $dropMenu.show()
 
-    $(".header__menu").css("overflow", "hidden")
+    if ($(this).hasClass("active")) {
+        $dropMenu.appendTo("body")
+        $dropMenu.show()
+    
+        $(".header__menu").css("overflow", "hidden")
+    } else {
+        $dropMenu.hide()
+        $dropMenu.appendTo(".header__menu")
+        $(".header__menu").css("overflow", "")
+    }
+
 
     if (window.outerWidth >= 1600) {
         $('body, html').toggleClass("lock");
@@ -89,7 +96,8 @@ $('#services-show').click(function() {
     }
 });
 
-$('#services-hide').click(function() {
+$('#services-hide').click(function(e) {
+
     $('#services-show').removeClass('active');
     let $dropMenu = $(this).parents(".drop-menu")
     $dropMenu.hide()
