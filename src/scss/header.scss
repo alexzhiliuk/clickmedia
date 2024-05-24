@@ -505,8 +505,7 @@
 
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    gap: 60px;
+    gap: 20px;
 
     @media screen and (max-width: $breakpoint1600) {
         gap: unset;
@@ -525,6 +524,43 @@
         right: 10px;
         top: 110px;
         height: calc(100vh - 120px);
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 60px;
+        max-width: 100%;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            background: #F1F3F9;
+            height: 8px;
+            width: 8px;
+            padding: 0 2px;
+            border-radius: 8px;
+            border-left: 1px solid #E1E6EF;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(29, 36, 51, 0.6);
+            opacity: 0.6;
+            height: 4px;
+            width: 4px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        @media screen and (max-width: $breakpoint1600) {
+            gap: unset;
+            flex-wrap: nowrap;
+            overflow: scroll;
+    
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
     }
 
     &__header {
@@ -614,7 +650,6 @@
     }
 
     &__close {
-        flex: 0 0 100%;
         align-self: flex-end;
         display: flex;
         flex-direction: column;

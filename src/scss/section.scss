@@ -7,6 +7,18 @@
         padding-bottom: 40px;
     }
 
+    &__hero {
+        display: flex;
+        gap: 100px;
+        align-items: flex-start;
+
+        @media screen and (max-width: $breakpoint1400) {
+            flex-direction: column;
+            align-items: unset;
+            gap: 40px;
+        }
+    }
+
     &__header {
 
         margin-bottom: 40px;

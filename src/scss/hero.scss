@@ -88,5 +88,53 @@
     &__item-text {
         @extend .desktop-list;
     }
+
+    &__card {
+        flex: 0 0 435px;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: $breakpoint1400) {
+            flex: unset;
+            margin: 0 -40px;
+        }
+
+        @media screen and (max-width: $breakpoint576) {
+            margin: 0 -20px;
+        }
+
+        &-subtitle {
+            
+            font-family: $headersFont;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 19px;
+            line-height: 135%;
+
+            color: $gray500;
+            margin-bottom: 30px;
+        }
+
+        &-img {
+            width: 100%;
+            margin-bottom: 20px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        p {
+            @include text-3;
+            color: $black;
+
+            margin-bottom: 10px;
+        }
+
+        &-btn {
+            margin-top: 30px;
+            max-width: 100%;
+        }
+    }
 }
 

@@ -80,25 +80,22 @@
     &__company {
         margin-bottom: 40px;
         display: flex;
-        flex-direction: column;
-        align-content: flex-start;
-        justify-content: center;
-        flex-wrap: wrap;
-        height: 100px;
+        align-items: flex-start;
 
-        @media screen and (max-width: $breakpoint768) {
-            height: 80px;
-        }
         @media screen and (max-width: $breakpoint576) {
-            height: unset;
+            flex-wrap: wrap;
         }
 
         &-img {
+            padding: 8px;
             margin-right: 30px;
             width: 100px;
             height: 100px;
             border-radius: 100%;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             @media screen and (max-width: $breakpoint768) {
                 width: 80px;
@@ -110,7 +107,7 @@
             }
 
             img {
-                width: 100%;
+                max-width: 100%;
             }
         }
 
@@ -141,6 +138,7 @@
 
     // .case__metrics
     &__metrics {
+        margin-top: auto;
     }
 
     // .case__metric
