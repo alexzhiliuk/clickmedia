@@ -141,6 +141,11 @@
         margin-top: auto;
     }
 
+    &__text {
+        @extend .text-3;
+        color: $black;
+    }
+
     // .case__metric
     &__metric {
         border-top: 1px solid $borderColor;

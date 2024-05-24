@@ -104,13 +104,29 @@
     &__btns {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 20px;
+
+        margin-top: 80px;
+
+        @media screen and (max-width: $breakpoint992) {
+            margin-top: 60px;
+        }
+    
+        @media screen and (max-width: $breakpoint768) {
+            margin-top: 40px;
+        }
 
         @media screen and (max-width: $breakpoint576) {
             flex-direction: column;
+        }
 
-            .section__btn:not(:first-child) {
-                margin-top: 0;
+        .section__btn {
+            flex: 1 0 fit-content;
+            margin-top: 0;
+
+            @media screen and (max-width: $breakpoint576) {
+                max-width: 100%;
             }
         }
     }
